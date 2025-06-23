@@ -1,54 +1,108 @@
-# React + TypeScript + Vite
+# MoodMuse UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MoodMuse UI is a vibrant and expressive React component library designed to bring your user interfaces to life. With a focus on customizability and ease of use, MoodMuse UI provides a collection of pre-built components that can be themed to match your application's unique personality.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Themable:** Easily switch between multiple built-in themes or create your own.
+-   **Customizable:** Components offer a rich set of props for fine-grained control over their appearance and behavior.
+-   **Built with TypeScript:** Enjoy the benefits of static typing for a better development experience.
+-   **Powered by styled-components:** Leverage the full power of CSS-in-JS for dynamic and flexible styling.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To install MoodMuse UI, run the following command in your project's directory:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install moodmuse-ui
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Peer Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+MoodMuse UI has `react`, `react-dom`, and `styled-components` as peer dependencies. You'll need to have these installed in your project.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install react react-dom styled-components
 ```
+
+## Usage
+
+To use the components from MoodMuse UI, you need to wrap your application with the `ThemeProvider`. This provides the theme to all the components in your application.
+
+### 1. Set up the ThemeProvider
+
+In your main application file (e.g., `App.tsx`), import the `ThemeProvider` and a theme of your choice from `moodmuse-ui`.
+
+```tsx
+import React from 'react';
+import { ThemeProvider, themes } from 'moodmuse-ui';
+import { YourComponent } from './YourComponent';
+
+function App() {
+  return (
+    <ThemeProvider theme={themes.neoglow}>
+      <YourComponent />
+    </ThemeProvider>
+  );
+}
+
+export default App;
+```
+
+### 2. Use the Button Component
+
+Now you can use the `Button` component anywhere in your application.
+
+```tsx
+import React from 'react';
+import { Button } from 'moodmuse-ui';
+
+export const YourComponent = () => {
+  return (
+    <div>
+      <Button
+        themeStyle="neoglow"
+        size="large"
+        onClick={() => alert('Button clicked!')}
+      >
+        Click Me!
+      </Button>
+    </div>
+  );
+};
+```
+
+## Button Component Props
+
+| Prop         | Type                               | Default     | Description                                             |
+|--------------|------------------------------------|-------------|---------------------------------------------------------|
+| `themeStyle` | `neoglow`, `brandfocused`, etc.    | `'neoglow'` | The visual style of the button.                         |
+| `size`       | `'small'`, `'medium'`, `'large'`   | `'medium'`  | The size of the button.                                 |
+| `radius`     | `'no'`, `'small'`, `'medium'`, `'large'`, `'pill'` | `'medium'`  | The border radius of the button.                        |
+| `fontFamily` | `inter`, `roboto`, etc.            | `'inter'`   | The font family for the button text.                    |
+| `leftIcon`   | `ReactNode`                        | `undefined` | An icon to display to the left of the button text.      |
+| `rightIcon`  | `ReactNode`                        | `undefined` | An icon to display to the right of the button text.     |
+| `dropShadow` | `boolean`                          | `true`      | Whether to apply a drop shadow to the button.           |
+| `disabled`   | `boolean`                          | `false`     | If `true`, the button will be disabled.                 |
+
+## Available Themes
+
+MoodMuse UI comes with a set of pre-built themes:
+
+-   `neoglow`
+-   `brandfocused`
+-   `softclay`
+-   `gradientglow`
+-   `ghostline`
+-   `moodpop`
+-   `monogrid`
+
+You can access them via the `themes` object exported from `moodmuse-ui`.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any ideas or improvements.
+
+## License
+
+This project is licensed under the MIT License.
