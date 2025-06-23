@@ -2,6 +2,7 @@ export const tokens = {
   colors: {
     primary: '#6E41E2',
     secondary: '#FF8A00',
+    border: '#E0E0E0',
     white: '#FFFFFF',
     black: '#000000',
     gray50: '#F9FAFB',
@@ -30,7 +31,6 @@ export const tokens = {
     pill: '9999px',
   },
   typography: {
-    fontFamily: '"Inter", sans-serif',
     fontSizes: {
       xs: '12px',
       sm: '14px',
@@ -42,6 +42,13 @@ export const tokens = {
       regular: 400,
       medium: 500,
       bold: 700,
+    },
+    fontFamilies: {
+      inter: 'Inter, sans-serif',
+      roboto: 'Roboto, sans-serif',
+      'roboto-slab': 'Roboto Slab, serif',
+      'plus-jakarta-sans': 'Plus Jakarta Sans, sans-serif',
+      'open-sans': 'Open Sans, sans-serif',
     },
   },
   shadows: {

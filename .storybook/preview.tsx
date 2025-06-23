@@ -27,7 +27,7 @@ const preview: Preview = {
           { value: 'brandfocused', title: 'BrandFocused' },
           { value: 'neoglow', title: 'NeoGlow' },
           { value: 'softclay', title: 'SoftClay' },
-          { value: 'glassmorph', title: 'Glassmorph' },
+          { value: 'gradientglow', title: 'GradientGlow' },
           { value: 'ghostline', title: 'GhostLine' },
           { value: 'moodpop', title: 'MoodPop' },
           { value: 'monogrid', title: 'MonoGrid' },

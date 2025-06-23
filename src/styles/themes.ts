@@ -13,6 +13,9 @@ export const themes = {
       text: '#8F8F8F',
       primary: '#FF5858',
       secondary: '#FF00E4',
+      border: '#8F8F8F',
+      surface: '#F5F5F5',
+      accent: '#FFD700',
     },
   },
   neoglow: {
@@ -39,16 +42,16 @@ export const themes = {
       accent: '#E0AFA0',
     },
   },
-  glassmorph: {
+  gradientglow: {
     ...baseTheme,
     colors: {
       ...baseTheme.colors,
-      background: 'rgba(255, 255, 255, 0.1)',
-      text: '#FFFFFF',
-      primary: 'rgba(255, 255, 255, 0.3)',
-      secondary: 'rgba(255, 255, 255, 0.2)',
-      surface: 'rgba(255, 255, 255, 0.15)',
-      accent: 'rgba(255, 255, 255, 0.5)',
+      background: '#ffffff',
+      text: '#E0E0E0',
+      primary: '#0FF1CE',
+      secondary: '#9C27B0',
+      surface: '#162447',
+      accent: '#F5F5F5',
     },
   },
   ghostline: {

@@ -11,6 +11,10 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    fontFamily: {
+      control: 'select',
+      options: Object.keys(themes.neoglow.typography.fontFamilies),
+    },
     themeStyle: {
       control: 'select',
       options: Object.keys(themes),
@@ -18,6 +22,13 @@ const meta: Meta<typeof Button> = {
     size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
+    },
+    radius: {
+      control: 'select',
+      options: ['no', 'small', 'medium', 'large', 'pill'],
+    },
+    dropShadow: {
+      control: 'boolean',
     },
     children: {
       control: 'text',
@@ -30,6 +41,9 @@ const meta: Meta<typeof Button> = {
     children: 'Click Me',
     size: 'medium',
     themeStyle: 'neoglow',
+    fontFamily: 'inter',
+    radius: 'medium',
+    dropShadow: true,
     disabled: false,
   },
 };
@@ -57,18 +71,17 @@ export const BrandFocused: Story = {
   },
 };
 
+export const GradientGlow: Story = {
+  args: {
+    children: 'GradientGlow Button',
+    themeStyle: 'gradientglow',
+  },
+};
+
 export const SoftClay: Story = {
   args: {
     children: 'SoftClay Button',
     themeStyle: 'softclay',
-    size: 'medium',
-  },
-};
-
-export const Glassmorph: Story = {
-  args: {
-    children: 'Glassmorph Button',
-    themeStyle: 'glassmorph',
     size: 'medium',
   },
 };

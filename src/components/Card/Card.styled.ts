@@ -57,11 +57,11 @@ const themeStyles: Record<
     border: 1px solid ${theme.colors.border};
     ${dropShadow && `box-shadow: 4px 4px 8px ${theme.colors.primary}`};
   `,
-  softclay: ({ theme, dropShadow }) => css`
+  softclay: ({ theme }) => css`
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    ${dropShadow && `box-shadow: 2px 2px 5px rgba(0,0,0,0.2);`};
+    box-shadow: 3px 3px 0px ${theme.colors.accent};
   `,
   gradientglow: ({ theme, dropShadow }) => css`
     background: linear-gradient(
@@ -78,6 +78,10 @@ const themeStyles: Record<
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.accent};
     ${dropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`};
+    &:hover {
+      background: ${theme.colors.accent};
+      color: ${theme.colors.background};
+    }
   `,
   moodpop: ({ theme, dropShadow }) => css`
     background: ${theme.colors.surface};

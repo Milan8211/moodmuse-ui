@@ -1,14 +1,16 @@
 import type { ReactNode } from 'react';
+import type { themes } from '../../styles';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 export type ButtonTheme =
   | 'neoglow'
   | 'brandfocused'
   | 'softclay'
-  | 'glassmorph'
+  | 'gradientglow'
   | 'ghostline'
   | 'moodpop'
   | 'monogrid';
+export type ButtonRadius = 'no' | 'small' | 'medium' | 'large' | 'pill';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,5 +19,8 @@ export interface ButtonProps
   themeStyle?: ButtonTheme;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
+  fontFamily?: keyof typeof themes.neoglow.typography.fontFamilies;
   disabled?: boolean;
+  radius?: ButtonRadius;
+  dropShadow?: boolean;
 }
