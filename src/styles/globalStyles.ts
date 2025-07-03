@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: ${({ theme }) => theme.typography.fontFamily};
+    font-family: ${({ theme }) => theme.typography.fontFamilies.inter};
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     -webkit-font-smoothing: antialiased;

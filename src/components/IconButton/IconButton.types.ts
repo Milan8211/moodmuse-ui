@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 import { themes } from '../../styles';
 
-export type ButtonSize = 'small' | 'medium' | 'large';
-export type ButtonRadius = 'no' | 'small' | 'medium' | 'large' | 'pill';
-export type ButtonTheme =
+export type IconButtonSize = 'small' | 'medium' | 'large';
+export type IconButtonRadius = 'no' | 'small' | 'medium' | 'large' | 'pill';
+export type IconButtonTheme =
   | 'neoglow'
   | 'brandfocused'
   | 'gradientglow'
@@ -14,13 +14,13 @@ export type ButtonTheme =
 
 export type FontFamily = keyof typeof themes.neoglow.typography.fontFamilies;
 
-export interface ButtonProps
+export interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fontFamily?: FontFamily;
   label?: ReactNode;
-  size?: ButtonSize;
-  themeStyle?: ButtonTheme;
+  size?: IconButtonSize;
+  themeStyle?: IconButtonTheme;
   icon?: ReactNode;
   dropShadow?: boolean;
-  radius?: ButtonRadius;
+  radius?: IconButtonRadius;
 }

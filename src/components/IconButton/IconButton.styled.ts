@@ -1,10 +1,10 @@
 import styled, { css, type DefaultTheme } from 'styled-components';
 import { motion } from 'framer-motion';
 import type {
-  ButtonProps,
-  ButtonSize,
-  ButtonTheme,
-  ButtonRadius,
+  IconButtonProps,
+  IconButtonSize,
+  IconButtonTheme,
+  IconButtonRadius,
 } from './IconButton.types';
 
 const sizeStyles = {
@@ -41,8 +41,8 @@ const radiusStyles = {
 };
 
 const themeStyles: Record<
-  ButtonTheme,
-  (props: ButtonProps & { theme: DefaultTheme }) => ReturnType<typeof css>
+  IconButtonTheme,
+  (props: IconButtonProps & { theme: DefaultTheme }) => ReturnType<typeof css>
 > = {
   neoglow: ({ theme, dropShadow }) => css`
     background-color: ${theme.colors.primary};
@@ -147,7 +147,7 @@ const themeStyles: Record<
   `,
 };
 
-export const StyledButton = styled(motion.button)<ButtonProps>`
+export const StyledButton = styled(motion.button)<IconButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -164,8 +164,8 @@ export const StyledButton = styled(motion.button)<ButtonProps>`
     color 1s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: color;
 
-  ${({ size = 'medium' }) => sizeStyles[size as ButtonSize]}
-  ${({ radius = 'medium' }) => radiusStyles[radius as ButtonRadius]}
+  ${({ size = 'medium' }) => sizeStyles[size as IconButtonSize]}
+  ${({ radius = 'medium' }) => radiusStyles[radius as IconButtonRadius]}
   ${(props) => themeStyles[props.themeStyle || 'neoglow'](props)}
 
   &:disabled {

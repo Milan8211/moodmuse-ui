@@ -9,16 +9,16 @@ import type {
 
 const sizeStyles = {
   small: css`
-    padding: ${({ theme }) => `${theme.spacing.xxs} ${theme.spacing.sm}`};
-    font-size: ${({ theme }) => theme.typography.fontSizes.xs};
+    padding: ${({ theme }) => `${theme.spacing.xs} ${theme.spacing.md}`};
+    font-size: ${({ theme }) => theme.typography.fontSizes.sm};
   `,
   medium: css`
     padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
-    font-size: ${({ theme }) => theme.typography.fontSizes.sm};
+    font-size: ${({ theme }) => theme.typography.fontSizes.md};
   `,
   large: css`
     padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.lg}`};
-    font-size: ${({ theme }) => theme.typography.fontSizes.md};
+    font-size: ${({ theme }) => theme.typography.fontSizes.lg};
   `,
 };
 

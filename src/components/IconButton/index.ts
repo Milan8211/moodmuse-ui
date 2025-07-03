@@ -1,2 +1,2 @@
-export * from './IconButton.js';
-export * from './IconButton.types.js';
+export * from './IconButton';
+export * from './IconButton.types';

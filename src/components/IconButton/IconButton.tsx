@@ -1,16 +1,16 @@
 import React from 'react';
-import type { ButtonProps } from './IconButton.types.js';
-import { StyledButton } from './IconButton.styled.js';
+import type { IconButtonProps } from './IconButton.types';
+import { StyledButton } from './IconButton.styled';
 
-export const IconButton: React.FC<ButtonProps> = ({
+export const IconButton: React.FC<IconButtonProps> = ({
   size = 'medium',
-  themeStyle = 'neoglow',
   radius = 'pill',
-  fontFamily,
+  themeStyle = 'neoglow',
+  dropShadow = true,
   icon,
   label,
   disabled = false,
-  dropShadow = true,
+  fontFamily,
   ...props
 }) => {
   return (

@@ -177,7 +177,7 @@ export const StyledInput = styled.input<InputProps>`
   border: none;
   outline: none;
   background: transparent;
-  color: ${({ theme }) => theme.colors.inputText};
+  color: ${({ theme }) => theme.colors.text};
   font-family: inherit;
   font-size: inherit;
 
