@@ -13,6 +13,10 @@ export {
   type IconButtonSize,
   type IconButtonTheme,
 } from './components/IconButton';
+
+export * from './components/Card';
+export * from './components/ImageCard';
+
 export * from './providers';
 export * from './styles';
 export {
