@@ -11,10 +11,6 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    fontFamily: {
-      control: 'select',
-      options: Object.keys(themes.neoglow.typography.fontFamilies),
-    },
     themeStyle: {
       control: 'select',
       options: Object.keys(themes),
@@ -41,7 +37,7 @@ const meta: Meta<typeof Button> = {
     children: 'Click Me',
     size: 'medium',
     themeStyle: 'neoglow',
-    fontFamily: 'inter',
+
     radius: 'medium',
     dropShadow: true,
     disabled: false,

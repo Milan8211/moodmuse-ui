@@ -19,11 +19,11 @@ export interface CardProps {
   dropShadow?: boolean;
   title: string;
   content: string;
-  isImage?: boolean;
   avatar?: ReactNode;
   icon?: ReactNode;
+  className?: string;
   imageSrc?: string;
   imageAlt?: string;
   imagePosition?: ImagePosition;
-  className?: string;
+  isImage?: boolean;
 }

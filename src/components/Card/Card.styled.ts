@@ -53,9 +53,14 @@ const themeStyles: Record<
   `,
   brandfocused: ({ theme, dropShadow }) => css`
     background-color: ${theme.colors.background};
-    color: ${theme.colors.text};
     border: 1px solid ${theme.colors.border};
     ${dropShadow && `box-shadow: 4px 4px 8px ${theme.colors.primary}`};
+    h3 {
+      color: #000000;
+    }
+    p {
+      color: #3b3b3b;
+    }
   `,
   softclay: ({ theme }) => css`
     background-color: ${theme.colors.surface};
@@ -127,8 +132,8 @@ export const CardWrapper = styled(motion.div)<CardProps>`
   ${({ size = 'medium' }) => sizeStyles[size as CardSize]}
   ${({ radius = 'medium' }) => radiusStyles[radius as CardRadius]}
   ${(props) => themeStyles[props.themeStyle || 'neoglow'](props)}
-  ${({ imagePosition = 'top' }) =>
-    positionStyles[imagePosition as ImagePosition]}
+  ${({ imagePosition }) =>
+    imagePosition && positionStyles[imagePosition as ImagePosition]}
 `;
 
 export const ImageWrapper = styled.div<{ position: ImagePosition }>`
@@ -150,8 +155,8 @@ export const CardImage = styled.img`
 `;
 
 export const TextWrapper = styled.div<{
-  position: ImagePosition;
-  isImage: boolean;
+  position?: ImagePosition;
+  isImage?: boolean;
 }>`
   padding: ${({ theme }) => theme.spacing.lg};
   display: flex;

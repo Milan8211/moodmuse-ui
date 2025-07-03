@@ -39,19 +39,6 @@ const meta: Meta<typeof Card> = {
     content: {
       control: 'text',
     },
-    imagePosition: {
-      control: 'select',
-      options: ['top', 'bottom', 'left', 'right'],
-    },
-    imageSrc: {
-      control: 'text',
-    },
-    isImage: {
-      control: 'boolean',
-    },
-    imageAlt: {
-      control: 'text',
-    },
   },
   args: {
     themeStyle: 'neoglow',
@@ -82,15 +69,6 @@ export const WithIcon: Story = {
     icon: <Icon icon="mdi:star-circle-outline" width="48" height="48" />,
     title: 'Feature Card',
     content: 'This card highlights a specific feature using an icon.',
-  },
-};
-
-export const WithImage: Story = {
-  args: {
-    imagePosition: 'top',
-    imageSrc: 'https://picsum.photos/seed/picsum/320/180',
-    imageAlt: 'Card Image',
-    isImage: true,
   },
 };
 

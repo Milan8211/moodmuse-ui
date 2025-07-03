@@ -151,10 +151,7 @@ export const StyledButton = styled(motion.button)<ButtonProps>`
   align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.xs};
-  font-family: ${({ theme, fontFamily }) =>
-    theme.typography.fontFamilies[
-      fontFamily as keyof typeof theme.typography.fontFamilies
-    ] || theme.typography.fontFamilies.inter};
+  font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
   font-weight: ${({ theme }) => theme.typography.fontWeights.medium};
   border-radius: ${({ theme }) => theme.borderRadius.md};
   cursor: pointer;

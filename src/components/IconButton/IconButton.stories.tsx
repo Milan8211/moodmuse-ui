@@ -11,10 +11,6 @@ const meta: Meta<typeof IconButton> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    fontFamily: {
-      control: 'select',
-      options: Object.keys(themes.neoglow.typography.fontFamilies),
-    },
     themeStyle: {
       control: 'select',
       options: Object.keys(themes),
