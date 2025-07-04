@@ -1,12 +1,6 @@
 import styled, { css, type DefaultTheme } from 'styled-components';
 import { motion } from 'framer-motion';
-import type {
-  CardProps,
-  CardRadius,
-  CardSize,
-  CardTheme,
-  ImagePosition,
-} from './Card.types';
+import type { CardProps, CardRadius, CardSize, CardTheme } from './Card.types';
 
 const sizeStyles = {
   small: css`
@@ -50,6 +44,11 @@ const themeStyles: Record<
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
     ${dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary}`};
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px ${theme.colors.primary};
+    }
   `,
   brandfocused: ({ theme, dropShadow }) => css`
     background-color: ${theme.colors.background};
@@ -61,12 +60,22 @@ const themeStyles: Record<
     p {
       color: #3b3b3b;
     }
+
+    &:hover {
+      transform: translate(-5px, -5px);
+      box-shadow: 12px 12px 8px ${theme.colors.primary};
+    }
   `,
   softclay: ({ theme }) => css`
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
     box-shadow: 3px 3px 0px ${theme.colors.accent};
+
+    &:hover {
+      transform: translate(-5px, -5px);
+      box-shadow: 12px 12px 0px ${theme.colors.accent};
+    }
   `,
   gradientglow: ({ theme, dropShadow }) => css`
     background: linear-gradient(
@@ -77,6 +86,11 @@ const themeStyles: Record<
     color: ${theme.colors.background};
     border: none;
     ${dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px ${theme.colors.primary};
+    }
   `,
   ghostline: ({ theme, dropShadow }) => css`
     background: transparent;
@@ -92,7 +106,12 @@ const themeStyles: Record<
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    ${dropShadow && `box-shadow: 3px 3px 0px ${theme.colors.secondary};`};
+    ${dropShadow && `box-shadow: 3px 3px 0px ${theme.colors.primary};`};
+
+    &:hover {
+      transform: translate(-5px, -5px);
+      box-shadow: 12px 12px 0px ${theme.colors.primary};
+    }
   `,
   monogrid: ({ theme, dropShadow }) => css`
     background: ${theme.colors.surface};
@@ -100,25 +119,11 @@ const themeStyles: Record<
     border: 2px solid ${theme.colors.black};
     font-family: 'Courier New', Courier, monospace;
     ${dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`};
-  `,
-};
 
-const positionStyles: Record<ImagePosition, ReturnType<typeof css>> = {
-  top: css`
-    flex-direction: column;
-  `,
-  bottom: css`
-    flex-direction: column-reverse;
-  `,
-  left: css`
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-  `,
-  right: css`
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    &:hover {
+      transform: translate(-5px, -5px);
+      box-shadow: 12px 12px 0px ${theme.colors.black};
+    }
   `,
 };
 
@@ -127,25 +132,10 @@ export const CardWrapper = styled(motion.div)<CardProps>`
   flex-direction: column;
   transition: all 0.3s ease-in-out;
   position: relative;
-  overflow: hidden;
 
   ${({ size = 'medium' }) => sizeStyles[size as CardSize]}
   ${({ radius = 'medium' }) => radiusStyles[radius as CardRadius]}
   ${(props) => themeStyles[props.themeStyle || 'neoglow'](props)}
-  ${({ imagePosition }) =>
-    imagePosition && positionStyles[imagePosition as ImagePosition]}
-`;
-
-export const ImageWrapper = styled.div<{ position: ImagePosition }>`
-  flex-shrink: 0;
-  ${({ position }) =>
-    position === 'left'
-      ? 'position: absolute; width: 45%; height: 100%; top: 0; left: 0;'
-      : position === 'right'
-        ? 'position: absolute; width: 45%; height: 100%; top: 0; right: 0;'
-        : position === 'bottom'
-          ? 'width: 100%; height: 100%; position: relative; bottom: -4px;'
-          : 'width: 100%; height: 100%;'}
 `;
 
 export const CardImage = styled.img`
@@ -154,21 +144,11 @@ export const CardImage = styled.img`
   object-fit: cover;
 `;
 
-export const TextWrapper = styled.div<{
-  position?: ImagePosition;
-  isImage?: boolean;
-}>`
+export const TextWrapper = styled.div`
   padding: ${({ theme }) => theme.spacing.lg};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${({ isImage, position }) =>
-    isImage &&
-    (position === 'left'
-      ? 'width: 55%; height: 100%;'
-      : position === 'right'
-        ? 'width: 55%; height: 100%;'
-        : 'width: 100%; height: 100%;')}
 `;
 
 export const CardHeader = styled.div`

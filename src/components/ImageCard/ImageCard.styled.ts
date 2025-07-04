@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import type {
   ImageCardProps,
-  ImageCardRadius,
   ImageCardSize,
   ImageCardPosition,
 } from './ImageCard.types';
@@ -28,21 +27,6 @@ const sizeTextStyles = {
   `,
   large: css`
     max-width: 275px;
-  `,
-};
-
-const radiusStyles = {
-  no: css`
-    border-radius: 0;
-  `,
-  small: css`
-    border-radius: ${({ theme }) => theme.borderRadius.sm};
-  `,
-  medium: css`
-    border-radius: ${({ theme }) => theme.borderRadius.md};
-  `,
-  large: css`
-    border-radius: ${({ theme }) => theme.borderRadius.lg};
   `,
 };
 
@@ -73,11 +57,10 @@ export const CardWrapper = styled(motion.div)<ImageCardProps>`
   transition: all 0.3s ease-in-out;
   position: relative;
   width: 100%;
-  ${({ radius = 'medium' }) => radiusStyles[radius as ImageCardRadius]}
   ${({ imagePosition }) =>
     imagePosition && positionStyles[imagePosition as ImageCardPosition]}
 
-&:hover {
+  &:hover {
     > div {
       &:first-child {
         transform: translate(-5px, -5px) !important;
@@ -113,21 +96,19 @@ export const CardImage = styled.img`
 export const TextWrapper = styled.div<{
   position?: ImageCardPosition;
   size: ImageCardSize;
-  isImage?: boolean;
 }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   ${({ size }) => sizeTextStyles[size as ImageCardSize]}
-  ${({ isImage, position }) =>
-    isImage &&
-    (position === 'left'
+  ${({ position }) =>
+    position === 'left'
       ? 'width: 55%; height: 100%; padding: 0 0 0 1.5rem;'
       : position === 'right'
         ? 'width: 55%; height: 100%; padding: 0 1.5rem 0 0;'
         : position === 'bottom'
           ? 'width: 100%; height: 100%; padding: 0 0 1.5rem 0;'
-          : 'width: 100%; height: 100%; padding: 1.5rem 0 0 0;')}
+          : 'width: 100%; height: 100%; padding: 1.5rem 0 0 0;'}
 `;
 
 export const CardHeader = styled.div`

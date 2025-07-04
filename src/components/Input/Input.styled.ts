@@ -33,6 +33,21 @@ const sizeStyles = {
   `,
 };
 
+const labelSizeStyles = {
+  small: css`
+    font-size: ${({ theme }) => theme.typography.fontSizes.sm};
+    margin-bottom: ${({ theme }) => theme.spacing.xs};
+  `,
+  medium: css`
+    font-size: ${({ theme }) => theme.typography.fontSizes.md};
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
+  `,
+  large: css`
+    font-size: ${({ theme }) => theme.typography.fontSizes.lg};
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+  `,
+};
+
 const radiusStyles = {
   no: css`
     border-radius: 0;
@@ -151,10 +166,7 @@ export const InputWrapper = styled.div<InputProps>`
   display: inline-flex;
   align-items: center;
   width: 100%;
-  font-family: ${({ theme, fontFamily }) =>
-    theme.typography.fontFamilies[
-      fontFamily as keyof typeof theme.typography.fontFamilies
-    ] || theme.typography.fontFamilies.inter};
+  font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
   transition: all 0.2s ease-in-out;
 
   ${({ size = 'medium' }) => sizeStyles[size as InputSize]}
@@ -189,12 +201,8 @@ export const StyledInput = styled.input<InputProps>`
 
 export const Label = styled.label<InputProps>`
   display: block;
-  margin-bottom: 8px;
-  font-family: ${({ theme, fontFamily }) =>
-    theme.typography.fontFamilies[
-      fontFamily as keyof typeof theme.typography.fontFamilies
-    ] || theme.typography.fontFamilies.inter};
-  font-size: ${({ theme }) => theme.typography.fontSizes.sm};
-  color: ${({ theme }) => theme.colors.black};
+  font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
+  ${({ size = 'medium' }) => labelSizeStyles[size as InputSize]}
+  color: ${({ theme }) => theme.colors.label};
   font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
 `;

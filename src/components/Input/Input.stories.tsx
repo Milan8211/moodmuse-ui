@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Input } from './Input';
 import { Icon } from '@iconify/react';
-import { themes } from '../../styles';
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
@@ -31,10 +30,6 @@ const meta: Meta<typeof Input> = {
       control: 'select',
       options: ['no', 'small', 'medium', 'large', 'pill'],
     },
-    fontFamily: {
-      control: 'select',
-      options: Object.keys(themes.neoglow.typography.fontFamilies),
-    },
     dropShadow: {
       control: 'boolean',
     },
@@ -52,7 +47,6 @@ const meta: Meta<typeof Input> = {
     themeStyle: 'neoglow',
     size: 'medium',
     radius: 'medium',
-    fontFamily: 'inter',
     dropShadow: true,
     disabled: false,
     placeholder: 'Enter text...',

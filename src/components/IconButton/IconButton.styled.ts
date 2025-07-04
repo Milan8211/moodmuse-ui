@@ -124,19 +124,13 @@ const themeStyles: Record<
     background: ${theme.colors.primary};
     color: ${theme.colors.background};
     border: none;
-    ${radiusStyles.large}
     font-weight: medium;
     ${dropShadow && `box-shadow: 3px 3px 0px ${theme.colors.secondary};`}
-
-    &:hover {
-      transform: scale(1.05);
-    }
   `,
   monogrid: ({ theme, dropShadow }) => css`
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    ${radiusStyles.no}
     font-family: 'Courier New', Courier, monospace;
     ${dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
 

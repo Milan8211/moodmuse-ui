@@ -9,7 +9,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       label,
       leftIcon,
       rightIcon,
-      fontFamily,
       themeStyle = 'neoglow',
       size = 'medium',
       radius = 'medium',
@@ -31,7 +30,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div>
         {label && (
-          <Label fontFamily={fontFamily} htmlFor={inputId}>
+          <Label size={size} htmlFor={inputId}>
             {label}
           </Label>
         )}
@@ -40,7 +39,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           size={size}
           radius={radius}
           dropShadow={props.dropShadow}
-          fontFamily={fontFamily}
         >
           {leftIcon}
           <StyledInput id={inputId} ref={ref} {...props} />

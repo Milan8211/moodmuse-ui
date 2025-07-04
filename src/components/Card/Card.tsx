@@ -38,7 +38,6 @@ export const Card: React.FC<CardProps> = ({
       radius={radius}
       size={size}
       dropShadow={dropShadow}
-      whileHover={{ y: -5, scale: 1.02 }}
       transition={{ type: 'spring', stiffness: 300 }}
       {...props}
     >

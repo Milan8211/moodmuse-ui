@@ -60,6 +60,7 @@ export const themes = {
       ...baseTheme.colors,
       background: '#121212',
       text: '#EAEAEA',
+      label: '#FFFFFF',
       primary: 'transparent',
       secondary: '#444444',
       surface: '#1E1E1E',

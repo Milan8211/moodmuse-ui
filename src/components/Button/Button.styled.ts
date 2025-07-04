@@ -9,7 +9,7 @@ import type {
 
 const sizeStyles = {
   small: css`
-    padding: ${({ theme }) => `${theme.spacing.xs} ${theme.spacing.md}`};
+    padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
     font-size: ${({ theme }) => theme.typography.fontSizes.sm};
   `,
   medium: css`
@@ -49,6 +49,12 @@ const themeStyles: Record<
     color: ${theme.colors.background};
     border: 2px solid ${theme.colors.primary};
     ${dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
+
+    &:hover {
+      background-color: transparent;
+      color: ${theme.colors.primary};
+      box-shadow: 0 0 10px ${theme.colors.primary};
+    }
   `,
   brandfocused: ({ theme, dropShadow }) => css`
     background-color: transparent;
@@ -87,6 +93,7 @@ const themeStyles: Record<
 
     &:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px ${theme.colors.primary};
     }
 
     &:active {
@@ -109,6 +116,11 @@ const themeStyles: Record<
     color: ${theme.colors.surface};
     border: 2px solid ${theme.colors.primary};
     box-shadow: 3px 3px 0px ${theme.colors.accent};
+
+    &:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px ${theme.colors.accent};
+    }
   `,
   ghostline: ({ theme, dropShadow }) => css`
     background: ${theme.colors.primary};
@@ -124,7 +136,6 @@ const themeStyles: Record<
     background: ${theme.colors.primary};
     color: ${theme.colors.background};
     border: none;
-    border-radius: ${theme.borderRadius.lg};
     font-weight: bold;
     ${dropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
     &:hover {
@@ -136,12 +147,13 @@ const themeStyles: Record<
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    border-radius: 0;
     font-family: 'Courier New', Courier, monospace;
     ${dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
     &:hover {
       background: ${theme.colors.primary};
       color: ${theme.colors.background};
+      transform: translate(3px, 3px);
+      ${dropShadow && `box-shadow: 0 0 0 ${theme.colors.black};`}
     }
   `,
 };

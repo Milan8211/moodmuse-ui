@@ -18,10 +18,6 @@ const meta: Meta<typeof ImageCard> = {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    radius: {
-      control: 'select',
-      options: ['no', 'small', 'medium', 'large'],
-    },
     imagePosition: {
       control: 'select',
       options: ['top', 'bottom', 'left', 'right'],
@@ -44,7 +40,6 @@ const meta: Meta<typeof ImageCard> = {
     imageAlt: 'Image Review',
     size: 'medium',
     themeStyle: 'neoglow',
-    radius: 'medium',
     dropShadow: true,
     imagePosition: 'top',
   },

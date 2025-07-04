@@ -6,7 +6,6 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   size = 'medium',
   themeStyle = 'neoglow',
-  fontFamily = 'inter',
   leftIcon,
   rightIcon,
   disabled = false,
@@ -18,7 +17,6 @@ export const Button: React.FC<ButtonProps> = ({
     <StyledButton
       size={size}
       themeStyle={themeStyle}
-      fontFamily={fontFamily}
       disabled={disabled}
       radius={radius}
       dropShadow={dropShadow}

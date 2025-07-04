@@ -10,7 +10,6 @@ export type CardTheme =
   | 'ghostline'
   | 'moodpop'
   | 'monogrid';
-export type ImagePosition = 'top' | 'bottom' | 'left' | 'right';
 
 export interface CardProps {
   themeStyle?: CardTheme;
@@ -22,8 +21,4 @@ export interface CardProps {
   avatar?: ReactNode;
   icon?: ReactNode;
   className?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  imagePosition?: ImagePosition;
-  isImage?: boolean;
 }
