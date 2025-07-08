@@ -44,11 +44,11 @@ const themeStyles: Record<
   ButtonTheme,
   (props: ButtonProps & { theme: DefaultTheme }) => ReturnType<typeof css>
 > = {
-  neoglow: ({ theme, dropShadow }) => css`
+  neoglow: ({ theme, $dropShadow }) => css`
     background-color: ${theme.colors.primary};
     color: ${theme.colors.background};
     border: 2px solid ${theme.colors.primary};
-    ${dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
+    ${$dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
 
     &:hover {
       background-color: transparent;
@@ -56,11 +56,11 @@ const themeStyles: Record<
       box-shadow: 0 0 10px ${theme.colors.primary};
     }
   `,
-  brandfocused: ({ theme, dropShadow }) => css`
+  brandfocused: ({ theme, $dropShadow }) => css`
     background-color: transparent;
     color: ${theme.colors.text};
     border: 1px solid ${theme.colors.border};
-    ${dropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
+    ${$dropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
 
     &:hover {
       background-color: ${theme.colors.primary};
@@ -71,7 +71,7 @@ const themeStyles: Record<
     &:active {
       border-color: #ffd3d3;
       color: ${theme.colors.primary};
-      ${dropShadow && `box-shadow: 0 4px 12px 1px rgba(255,88,88,1);`}
+      ${$dropShadow && `box-shadow: 0 4px 12px 1px rgba(255,88,88,1);`}
     }
 
     &:disabled {
@@ -81,7 +81,7 @@ const themeStyles: Record<
       opacity: 1 !important;
     }
   `,
-  gradientglow: ({ theme, dropShadow }) => css`
+  gradientglow: ({ theme, $dropShadow }) => css`
     background: linear-gradient(
       45deg,
       ${theme.colors.primary},
@@ -89,7 +89,7 @@ const themeStyles: Record<
     );
     color: ${theme.colors.background};
     border: none;
-    ${dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
+    ${$dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
 
     &:hover {
       transform: scale(1.05);
@@ -122,38 +122,38 @@ const themeStyles: Record<
       box-shadow: 8px 8px 0px ${theme.colors.accent};
     }
   `,
-  ghostline: ({ theme, dropShadow }) => css`
+  ghostline: ({ theme, $dropShadow }) => css`
     background: ${theme.colors.primary};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.accent};
-    ${dropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`};
+    ${$dropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`};
     &:hover {
       background: ${theme.colors.accent};
       color: ${theme.colors.background};
     }
   `,
-  moodpop: ({ theme, dropShadow }) => css`
+  moodpop: ({ theme, $dropShadow }) => css`
     background: ${theme.colors.primary};
     color: ${theme.colors.background};
     border: none;
     font-weight: bold;
-    ${dropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
+    ${$dropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
     &:hover {
       color: #ffffff;
       background: ${theme.colors.secondary};
     }
   `,
-  monogrid: ({ theme, dropShadow }) => css`
+  monogrid: ({ theme, $dropShadow }) => css`
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
     font-family: 'Courier New', Courier, monospace;
-    ${dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
+    ${$dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
     &:hover {
       background: ${theme.colors.primary};
       color: ${theme.colors.background};
       transform: translate(3px, 3px);
-      ${dropShadow && `box-shadow: 0 0 0 ${theme.colors.black};`}
+      ${$dropShadow && `box-shadow: 0 0 0 ${theme.colors.black};`}
     }
   `,
 };
@@ -169,9 +169,12 @@ export const StyledButton = styled(motion.button)<ButtonProps>`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
-  ${({ size = 'medium' }) => sizeStyles[size as ButtonSize]}
-  ${({ radius = 'medium' }) => radiusStyles[radius as ButtonRadius]}
-  ${({ themeStyle = 'neoglow' }) => themeStyles[themeStyle as ButtonTheme]}
+  ${({ $size = 'medium' }) => sizeStyles[$size as ButtonSize]}
+  ${({ $radius = 'medium' }) => radiusStyles[$radius as ButtonRadius]}
+  ${({ $themeStyle = 'neoglow', ...props }) =>
+    themeStyles[$themeStyle as ButtonTheme](
+      props as ButtonProps & { theme: DefaultTheme },
+    )}
 
   &:disabled {
     cursor: not-allowed;

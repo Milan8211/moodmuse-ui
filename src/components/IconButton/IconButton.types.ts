@@ -17,9 +17,9 @@ export type FontFamily = keyof typeof themes.neoglow.typography.fontFamilies;
 export interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: ReactNode;
-  size?: IconButtonSize;
-  themeStyle?: IconButtonTheme;
+  $size?: IconButtonSize;
+  $themeStyle?: IconButtonTheme;
   icon?: ReactNode;
-  dropShadow?: boolean;
-  radius?: IconButtonRadius;
+  $dropShadow?: boolean;
+  $radius?: IconButtonRadius;
 }

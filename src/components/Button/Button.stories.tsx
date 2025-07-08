@@ -11,19 +11,19 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    themeStyle: {
+    $themeStyle: {
       control: 'select',
       options: Object.keys(themes),
     },
-    size: {
+    $size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    radius: {
+    $radius: {
       control: 'select',
       options: ['no', 'small', 'medium', 'large', 'pill'],
     },
-    dropShadow: {
+    $dropShadow: {
       control: 'boolean',
     },
     children: {
@@ -35,11 +35,11 @@ const meta: Meta<typeof Button> = {
   },
   args: {
     children: 'Click Me',
-    size: 'medium',
-    themeStyle: 'neoglow',
+    $size: 'medium',
+    $themeStyle: 'neoglow',
 
-    radius: 'medium',
-    dropShadow: true,
+    $radius: 'medium',
+    $dropShadow: true,
     disabled: false,
   },
 };
@@ -55,7 +55,7 @@ export const Default: Story = {
 
 export const NeoGlow: Story = {
   args: {
-    themeStyle: 'neoglow',
+    $themeStyle: 'neoglow',
     children: 'NeoGlow Button',
   },
 };
@@ -63,38 +63,38 @@ export const NeoGlow: Story = {
 export const BrandFocused: Story = {
   args: {
     children: 'BrandFocused Button',
-    themeStyle: 'brandfocused',
+    $themeStyle: 'brandfocused',
   },
 };
 
 export const GradientGlow: Story = {
   args: {
     children: 'GradientGlow Button',
-    themeStyle: 'gradientglow',
+    $themeStyle: 'gradientglow',
   },
 };
 
 export const SoftClay: Story = {
   args: {
     children: 'SoftClay Button',
-    themeStyle: 'softclay',
-    size: 'medium',
+    $themeStyle: 'softclay',
+    $size: 'medium',
   },
 };
 
 export const GhostLine: Story = {
   args: {
     children: 'GhostLine Button',
-    themeStyle: 'ghostline',
-    size: 'medium',
+    $themeStyle: 'ghostline',
+    $size: 'medium',
   },
 };
 
 export const MoodPop: Story = {
   args: {
     children: 'MoodPop Button',
-    themeStyle: 'moodpop',
-    size: 'medium',
+    $themeStyle: 'moodpop',
+    $size: 'medium',
     leftIcon: <Icon icon="mdi:home" />,
   },
 };
@@ -102,21 +102,21 @@ export const MoodPop: Story = {
 export const MonoGrid: Story = {
   args: {
     children: 'MonoGrid Button',
-    themeStyle: 'monogrid',
-    size: 'medium',
+    $themeStyle: 'monogrid',
+    $size: 'medium',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    $size: 'large',
     children: 'Large Button',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    $size: 'small',
     children: 'Small Button',
   },
 };

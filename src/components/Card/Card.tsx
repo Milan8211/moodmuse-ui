@@ -15,10 +15,10 @@ export const Card: React.FC<CardProps> = ({
   content,
   avatar,
   icon,
-  size = 'small',
-  themeStyle = 'neoglow',
-  radius = 'medium',
-  dropShadow = true,
+  $themeStyle = 'neoglow',
+  $radius = 'medium',
+  $size = 'medium',
+  $dropShadow = true,
   ...props
 }) => {
   const theme = useTheme();
@@ -34,19 +34,19 @@ export const Card: React.FC<CardProps> = ({
     <CardWrapper
       title={title}
       content={content}
-      themeStyle={themeStyle}
-      radius={radius}
-      size={size}
-      dropShadow={dropShadow}
+      $themeStyle={$themeStyle}
+      $radius={$radius}
+      $size={$size}
+      $dropShadow={$dropShadow}
       transition={{ type: 'spring', stiffness: 300 }}
       {...props}
     >
       <TextWrapper>
         <CardHeader>
           {(avatar || icon) && <AvatarWrapper>{avatar || icon}</AvatarWrapper>}
-          <CardTitle size={size}>{title}</CardTitle>
+          <CardTitle $size={$size}>{title}</CardTitle>
         </CardHeader>
-        <CardContent size={size}>{content}</CardContent>
+        <CardContent $size={$size}>{content}</CardContent>
       </TextWrapper>
     </CardWrapper>
   );

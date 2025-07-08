@@ -10,7 +10,7 @@ const meta: Meta<typeof Card> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    themeStyle: {
+    $themeStyle: {
       control: 'select',
       options: [
         'neoglow',
@@ -22,15 +22,15 @@ const meta: Meta<typeof Card> = {
         'monogrid',
       ],
     },
-    radius: {
+    $radius: {
       control: 'select',
       options: ['no', 'small', 'medium', 'large'],
     },
-    size: {
+    $size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    dropShadow: {
+    $dropShadow: {
       control: 'boolean',
     },
     title: {
@@ -41,10 +41,10 @@ const meta: Meta<typeof Card> = {
     },
   },
   args: {
-    themeStyle: 'neoglow',
-    radius: 'medium',
-    size: 'small',
-    dropShadow: true,
+    $themeStyle: 'neoglow',
+    $radius: 'medium',
+    $size: 'small',
+    $dropShadow: true,
     title: 'Card Title',
     content:
       'This is the card content. It can be a short description or any other information.',
@@ -74,42 +74,42 @@ export const WithIcon: Story = {
 
 export const NeoGlow: Story = {
   args: {
-    themeStyle: 'neoglow',
+    $themeStyle: 'neoglow',
   },
 };
 
 export const BrandFocused: Story = {
   args: {
-    themeStyle: 'brandfocused',
+    $themeStyle: 'brandfocused',
   },
 };
 
 export const SoftClay: Story = {
   args: {
-    themeStyle: 'softclay',
+    $themeStyle: 'softclay',
   },
 };
 
 export const GradientGlow: Story = {
   args: {
-    themeStyle: 'gradientglow',
+    $themeStyle: 'gradientglow',
   },
 };
 
 export const GhostLine: Story = {
   args: {
-    themeStyle: 'ghostline',
+    $themeStyle: 'ghostline',
   },
 };
 
 export const MoodPop: Story = {
   args: {
-    themeStyle: 'moodpop',
+    $themeStyle: 'moodpop',
   },
 };
 
 export const MonoGrid: Story = {
   args: {
-    themeStyle: 'monogrid',
+    $themeStyle: 'monogrid',
   },
 };

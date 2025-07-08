@@ -10,19 +10,19 @@ const meta: Meta<typeof ImageCard> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    themeStyle: {
+    $themeStyle: {
       control: 'select',
       options: Object.keys(themes),
     },
-    size: {
+    $size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    imagePosition: {
+    $imagePosition: {
       control: 'select',
       options: ['top', 'bottom', 'left', 'right'],
     },
-    dropShadow: {
+    $dropShadow: {
       control: 'boolean',
     },
     title: {
@@ -38,10 +38,10 @@ const meta: Meta<typeof ImageCard> = {
       'This is the card content. It can be a short description or any other information.',
     imageSrc: '/public/images/ImageReview.png',
     imageAlt: 'Image Review',
-    size: 'medium',
-    themeStyle: 'neoglow',
-    dropShadow: true,
-    imagePosition: 'top',
+    $size: 'medium',
+    $themeStyle: 'neoglow',
+    $dropShadow: true,
+    $imagePosition: 'top',
   },
 };
 

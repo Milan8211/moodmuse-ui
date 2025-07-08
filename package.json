@@ -1,6 +1,6 @@
 {
   "name": "moodmuse-ui",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "private": false,
   "description": "A vibrant and expressive React component library for building modern user interfaces.",
   "author": "Milan Thapa",
@@ -17,6 +17,8 @@
   "files": [
     "dist"
   ],
+  "main": "./dist/moodmuse-ui.umd.js",
+  "module": "./dist/moodmuse-ui.es.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

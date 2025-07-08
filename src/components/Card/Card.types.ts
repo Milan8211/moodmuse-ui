@@ -12,10 +12,10 @@ export type CardTheme =
   | 'monogrid';
 
 export interface CardProps {
-  themeStyle?: CardTheme;
-  radius?: CardRadius;
-  size?: CardSize;
-  dropShadow?: boolean;
+  $themeStyle?: CardTheme;
+  $radius?: CardRadius;
+  $size?: CardSize;
+  $dropShadow?: boolean;
   title: string;
   content: string;
   avatar?: ReactNode;

@@ -57,8 +57,8 @@ export const CardWrapper = styled(motion.div)<ImageCardProps>`
   transition: all 0.3s ease-in-out;
   position: relative;
   width: 100%;
-  ${({ imagePosition }) =>
-    imagePosition && positionStyles[imagePosition as ImageCardPosition]}
+  ${({ $imagePosition }) =>
+    $imagePosition && positionStyles[$imagePosition as ImageCardPosition]}
 
   &:hover {
     > div {
@@ -71,18 +71,18 @@ export const CardWrapper = styled(motion.div)<ImageCardProps>`
 `;
 
 export const ImageWrapper = styled.div<{
-  position: ImageCardPosition;
-  size: ImageCardSize;
+  $position: ImageCardPosition;
+  $size: ImageCardSize;
 }>`
   flex-shrink: 0;
   transition: all 0.3s ease-in-out;
-  ${({ size }) => sizeImageStyles[size as ImageCardSize]}
-  ${({ position }) =>
-    position === 'left'
+  ${({ $size }) => sizeImageStyles[$size as ImageCardSize]}
+  ${({ $position }) =>
+    $position === 'left'
       ? 'position: absolute; width: 45%; height: 100%; top: 0; left: 0;'
-      : position === 'right'
+      : $position === 'right'
         ? 'position: absolute; width: 45%; height: 100%; top: 0; right: 0;'
-        : position === 'bottom'
+        : $position === 'bottom'
           ? 'width: 100%; height: 100%; position: relative; bottom: -4px;'
           : 'width: 100%; height: 100%;'}
 `;
@@ -94,19 +94,19 @@ export const CardImage = styled.img`
 `;
 
 export const TextWrapper = styled.div<{
-  position?: ImageCardPosition;
-  size: ImageCardSize;
+  $position?: ImageCardPosition;
+  $size: ImageCardSize;
 }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${({ size }) => sizeTextStyles[size as ImageCardSize]}
-  ${({ position }) =>
-    position === 'left'
+  ${({ $size }) => sizeTextStyles[$size as ImageCardSize]}
+  ${({ $position }) =>
+    $position === 'left'
       ? 'width: 55%; height: 100%; padding: 0 0 0 1.5rem;'
-      : position === 'right'
+      : $position === 'right'
         ? 'width: 55%; height: 100%; padding: 0 1.5rem 0 0;'
-        : position === 'bottom'
+        : $position === 'bottom'
           ? 'width: 100%; height: 100%; padding: 0 0 1.5rem 0;'
           : 'width: 100%; height: 100%; padding: 1.5rem 0 0 0;'}
 `;
@@ -132,11 +132,11 @@ const sizeTitleStyles = {
   `,
 };
 
-export const CardTitle = styled.h3<{ size: ImageCardSize }>`
+export const CardTitle = styled.h3<{ $size: ImageCardSize }>`
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
   color: #000000;
   margin: 0;
-  ${({ size = 'medium' }) => sizeTitleStyles[size as ImageCardSize]}
+  ${({ $size = 'medium' }) => sizeTitleStyles[$size as ImageCardSize]}
 `;
 
 const sizeContentStyles = {
@@ -151,9 +151,9 @@ const sizeContentStyles = {
   `,
 };
 
-export const CardContent = styled.p<{ size: ImageCardSize }>`
+export const CardContent = styled.p<{ $size: ImageCardSize }>`
   color: #3b3b3b;
   margin: 0;
   line-height: 1.5;
-  ${({ size = 'medium' }) => sizeContentStyles[size as ImageCardSize]}
+  ${({ $size = 'medium' }) => sizeContentStyles[$size as ImageCardSize]}
 `;
