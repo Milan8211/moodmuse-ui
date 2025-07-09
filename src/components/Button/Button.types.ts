@@ -16,9 +16,10 @@ export interface ButtonProps
   children: ReactNode;
   $size?: ButtonSize;
   $themeStyle?: ButtonTheme;
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
+  $leftIcon?: ReactNode;
+  $rightIcon?: ReactNode;
   disabled?: boolean;
   $radius?: ButtonRadius;
   $dropShadow?: boolean;
+  className?: string;
 }

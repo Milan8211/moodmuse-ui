@@ -6,8 +6,8 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   $size = 'medium',
   $themeStyle = 'neoglow',
-  leftIcon,
-  rightIcon,
+  $leftIcon,
+  $rightIcon,
   disabled = false,
   $radius = 'medium',
   $dropShadow = true,
@@ -22,9 +22,9 @@ export const Button: React.FC<ButtonProps> = ({
       $dropShadow={$dropShadow}
       {...props}
     >
-      {leftIcon}
+      {$leftIcon}
       <span>{children}</span>
-      {rightIcon}
+      {$rightIcon}
     </StyledButton>
   );
 };

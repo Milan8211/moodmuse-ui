@@ -25,19 +25,19 @@ const meta: Meta<typeof ImageCard> = {
     $dropShadow: {
       control: 'boolean',
     },
-    title: {
+    $title: {
       control: 'text',
     },
-    content: {
+    $content: {
       control: 'text',
     },
   },
   args: {
-    title: 'Image Card Title',
-    content:
+    $title: 'Image Card Title',
+    $content:
       'This is the card content. It can be a short description or any other information.',
-    imageSrc: '/public/images/ImageReview.png',
-    imageAlt: 'Image Review',
+    $imageSrc: '/public/images/ImageReview.png',
+    $imageAlt: 'Image Review',
     $size: 'medium',
     $themeStyle: 'neoglow',
     $dropShadow: true,

@@ -16,9 +16,9 @@ export interface CardProps {
   $radius?: CardRadius;
   $size?: CardSize;
   $dropShadow?: boolean;
-  title: string;
-  content: string;
-  avatar?: ReactNode;
-  icon?: ReactNode;
+  $title: string;
+  $content: string;
+  $avatar?: ReactNode;
+  $icon?: ReactNode;
   className?: string;
 }

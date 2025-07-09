@@ -33,10 +33,10 @@ const meta: Meta<typeof Card> = {
     $dropShadow: {
       control: 'boolean',
     },
-    title: {
+    $title: {
       control: 'text',
     },
-    content: {
+    $content: {
       control: 'text',
     },
   },
@@ -45,8 +45,8 @@ const meta: Meta<typeof Card> = {
     $radius: 'medium',
     $size: 'small',
     $dropShadow: true,
-    title: 'Card Title',
-    content:
+    $title: 'Card Title',
+    $content:
       'This is the card content. It can be a short description or any other information.',
   },
 };
@@ -58,17 +58,17 @@ export const Default: Story = {};
 
 export const WithAvatar: Story = {
   args: {
-    avatar: <img src="https://i.pravatar.cc/48" alt="Avatar" />,
-    title: 'User Card',
-    content: 'This card represents a user profile with an avatar.',
+    $avatar: <img src="https://i.pravatar.cc/48" alt="Avatar" />,
+    $title: 'User Card',
+    $content: 'This card represents a user profile with an avatar.',
   },
 };
 
 export const WithIcon: Story = {
   args: {
-    icon: <Icon icon="mdi:star-circle-outline" width="48" height="48" />,
-    title: 'Feature Card',
-    content: 'This card highlights a specific feature using an icon.',
+    $icon: <Icon icon="mdi:star-circle-outline" width="48" height="48" />,
+    $title: 'Feature Card',
+    $content: 'This card highlights a specific feature using an icon.',
   },
 };
 

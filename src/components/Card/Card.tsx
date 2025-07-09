@@ -11,10 +11,10 @@ import {
 } from './Card.styled.js';
 
 export const Card: React.FC<CardProps> = ({
-  title,
-  content,
-  avatar,
-  icon,
+  $title,
+  $content,
+  $avatar,
+  $icon,
   $themeStyle = 'neoglow',
   $radius = 'medium',
   $size = 'medium',
@@ -32,8 +32,8 @@ export const Card: React.FC<CardProps> = ({
 
   return (
     <CardWrapper
-      title={title}
-      content={content}
+      $title={$title}
+      $content={$content}
       $themeStyle={$themeStyle}
       $radius={$radius}
       $size={$size}
@@ -43,10 +43,12 @@ export const Card: React.FC<CardProps> = ({
     >
       <TextWrapper>
         <CardHeader>
-          {(avatar || icon) && <AvatarWrapper>{avatar || icon}</AvatarWrapper>}
-          <CardTitle $size={$size}>{title}</CardTitle>
+          {($avatar || $icon) && (
+            <AvatarWrapper>{$avatar || $icon}</AvatarWrapper>
+          )}
+          <CardTitle $size={$size}>{$title}</CardTitle>
         </CardHeader>
-        <CardContent $size={$size}>{content}</CardContent>
+        <CardContent $size={$size}>{$content}</CardContent>
       </TextWrapper>
     </CardWrapper>
   );

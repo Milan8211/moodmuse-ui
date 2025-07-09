@@ -12,11 +12,11 @@ export type ImageCardTheme =
 export interface ImageCardProps {
   $size?: ImageCardSize;
   $dropShadow?: boolean;
-  title?: string;
-  content?: string;
+  $title?: string;
+  $content?: string;
   className?: string;
-  imageSrc?: string;
-  imageAlt?: string;
+  $imageSrc?: string;
+  $imageAlt?: string;
   $imagePosition?: ImageCardPosition;
   $themeStyle?: ImageCardTheme;
 }

@@ -95,7 +95,7 @@ export const MoodPop: Story = {
     children: 'MoodPop Button',
     $themeStyle: 'moodpop',
     $size: 'medium',
-    leftIcon: <Icon icon="mdi:home" />,
+    $leftIcon: <Icon icon="mdi:home" />,
   },
 };
 

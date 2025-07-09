@@ -135,7 +135,7 @@ const themeStyles: Record<
     ${dropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`}
 
     &:focus-within {
-      border-color: ${theme.colors.primary};
+      border-color: ${theme.colors.accent};
     }
   `,
   moodpop: ({ theme, dropShadow }) => css`
@@ -169,9 +169,9 @@ export const InputWrapper = styled.div<InputProps>`
   font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
   transition: all 0.2s ease-in-out;
 
-  ${({ size = 'medium' }) => sizeStyles[size as InputSize]}
-  ${({ radius = 'medium' }) => radiusStyles[radius as InputRadius]}
-  ${(props) => themeStyles[props.themeStyle || 'neoglow'](props)}
+  ${({ $size = 'medium' }) => sizeStyles[$size as InputSize]}
+  ${({ $radius = 'medium' }) => radiusStyles[$radius as InputRadius]}
+  ${(props) => themeStyles[props.$themeStyle || 'neoglow'](props)}
 
   & > svg {
     color: ${({ theme }) => theme.colors.gray500};
@@ -202,7 +202,7 @@ export const StyledInput = styled.input<InputProps>`
 export const Label = styled.label<InputProps>`
   display: block;
   font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
-  ${({ size = 'medium' }) => labelSizeStyles[size as InputSize]}
+  ${({ $size = 'medium' }) => labelSizeStyles[$size as InputSize]}
   color: ${({ theme }) => theme.colors.label};
   font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
 `;

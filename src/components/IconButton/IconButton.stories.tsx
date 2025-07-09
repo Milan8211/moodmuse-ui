@@ -26,7 +26,7 @@ const meta: Meta<typeof IconButton> = {
     $dropShadow: {
       control: 'boolean',
     },
-    label: {
+    $label: {
       control: 'text',
     },
     disabled: {
@@ -34,8 +34,8 @@ const meta: Meta<typeof IconButton> = {
     },
   },
   args: {
-    icon: <Icon icon="line-md:home" className="icon" />,
-    label: 'Home',
+    $icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'Home',
     $size: 'medium',
     $radius: 'pill',
     $themeStyle: 'neoglow',
@@ -49,84 +49,84 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'Home',
-    icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'Home',
+    $icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const NeoGlow: Story = {
   args: {
     $themeStyle: 'neoglow',
-    label: 'NeoGlow',
-    icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'NeoGlow',
+    $icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const BrandFocused: Story = {
   args: {
     $themeStyle: 'brandfocused',
-    icon: <Icon icon="line-md:home" className="icon" />,
-    label: 'BrandFocused',
+    $icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'BrandFocused',
   },
 };
 
 export const GradientGlow: Story = {
   args: {
     $themeStyle: 'gradientglow',
-    label: 'GradientGlow',
-    icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'GradientGlow',
+    $icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const SoftClay: Story = {
   args: {
     $themeStyle: 'softclay',
-    label: 'SoftClay',
-    icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'SoftClay',
+    $icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const GhostLine: Story = {
   args: {
     $themeStyle: 'ghostline',
-    label: 'GhostLine',
-    icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'GhostLine',
+    $icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const MoodPop: Story = {
   args: {
     $themeStyle: 'moodpop',
-    label: 'MoodPop',
-    icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'MoodPop',
+    $icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const MonoGrid: Story = {
   args: {
     $themeStyle: 'monogrid',
-    label: 'MonoGrid',
-    icon: <Icon icon="line-md:home" className="icon" />,
+    $label: 'MonoGrid',
+    $icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const Large: Story = {
   args: {
     $size: 'large',
-    label: 'Large',
+    $label: 'Large',
   },
 };
 
 export const Small: Story = {
   args: {
     $size: 'small',
-    label: 'Small',
+    $label: 'Small',
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    label: 'Disabled',
+    $label: 'Disabled',
   },
 };

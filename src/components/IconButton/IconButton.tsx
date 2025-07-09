@@ -7,8 +7,8 @@ export const IconButton: React.FC<IconButtonProps> = ({
   $themeStyle = 'neoglow',
   $radius = 'medium',
   $dropShadow = true,
-  icon,
-  label,
+  $icon,
+  $label,
   disabled = false,
   ...props
 }) => {
@@ -22,8 +22,8 @@ export const IconButton: React.FC<IconButtonProps> = ({
       transition={{ type: 'spring', stiffness: 400, damping: 28 }}
       {...props}
     >
-      {icon}
-      <span>{label}</span>
+      {$icon}
+      <span>{$label}</span>
     </StyledButton>
   );
 };
