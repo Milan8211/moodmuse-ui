@@ -14,12 +14,11 @@ export type ButtonRadius = 'no' | 'small' | 'medium' | 'large' | 'pill';
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  $size?: ButtonSize;
-  $themeStyle?: ButtonTheme;
-  $leftIcon?: ReactNode;
-  $rightIcon?: ReactNode;
-  disabled?: boolean;
-  $radius?: ButtonRadius;
-  $dropShadow?: boolean;
-  className?: string;
+  $buttonSize?: ButtonSize;
+  $buttonThemeStyle?: ButtonTheme;
+  $buttonLeftIcon?: ReactNode;
+  $buttonRightIcon?: ReactNode;
+  $disabled?: boolean;
+  $buttonRadius?: ButtonRadius;
+  $buttonDropShadow?: boolean;
 }

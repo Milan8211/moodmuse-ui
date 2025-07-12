@@ -11,14 +11,14 @@ import {
 } from './Card.styled.js';
 
 export const Card: React.FC<CardProps> = ({
-  $title,
-  $content,
-  $avatar,
-  $icon,
-  $themeStyle = 'neoglow',
-  $radius = 'medium',
-  $size = 'medium',
-  $dropShadow = true,
+  $cardTitle,
+  $cardContent,
+  $cardAvatar,
+  $cardIcon,
+  $cardThemeStyle = 'neoglow',
+  $cardRadius = 'medium',
+  $cardSize = 'medium',
+  $cardDropShadow = true,
   ...props
 }) => {
   const theme = useTheme();
@@ -32,23 +32,23 @@ export const Card: React.FC<CardProps> = ({
 
   return (
     <CardWrapper
-      $title={$title}
-      $content={$content}
-      $themeStyle={$themeStyle}
-      $radius={$radius}
-      $size={$size}
-      $dropShadow={$dropShadow}
+      $cardTitle={$cardTitle}
+      $cardContent={$cardContent}
+      $cardThemeStyle={$cardThemeStyle}
+      $cardRadius={$cardRadius}
+      $cardSize={$cardSize}
+      $cardDropShadow={$cardDropShadow}
       transition={{ type: 'spring', stiffness: 300 }}
       {...props}
     >
       <TextWrapper>
         <CardHeader>
-          {($avatar || $icon) && (
-            <AvatarWrapper>{$avatar || $icon}</AvatarWrapper>
+          {($cardAvatar || $cardIcon) && (
+            <AvatarWrapper>{$cardAvatar || $cardIcon}</AvatarWrapper>
           )}
-          <CardTitle $size={$size}>{$title}</CardTitle>
+          <CardTitle $cardSize={$cardSize}>{$cardTitle}</CardTitle>
         </CardHeader>
-        <CardContent $size={$size}>{$content}</CardContent>
+        <CardContent $cardSize={$cardSize}>{$cardContent}</CardContent>
       </TextWrapper>
     </CardWrapper>
   );

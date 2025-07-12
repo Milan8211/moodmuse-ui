@@ -10,11 +10,11 @@ const meta: Meta<typeof ImageCard> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    $themeStyle: {
+    $imageCardThemeStyle: {
       control: 'select',
       options: Object.keys(themes),
     },
-    $size: {
+    $imageCardSize: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
@@ -22,26 +22,26 @@ const meta: Meta<typeof ImageCard> = {
       control: 'select',
       options: ['top', 'bottom', 'left', 'right'],
     },
-    $dropShadow: {
+    $imageCardDropShadow: {
       control: 'boolean',
     },
-    $title: {
+    $imageCardTitle: {
       control: 'text',
     },
-    $content: {
+    $imageCardContent: {
       control: 'text',
     },
   },
   args: {
-    $title: 'Image Card Title',
-    $content:
+    $imageCardTitle: 'Image Card Title',
+    $imageCardContent:
       'This is the card content. It can be a short description or any other information.',
     $imageSrc: '/public/images/ImageReview.png',
     $imageAlt: 'Image Review',
-    $size: 'medium',
-    $themeStyle: 'neoglow',
-    $dropShadow: true,
+    $imageCardSize: 'medium',
+    $imageCardDropShadow: true,
     $imagePosition: 'top',
+    $imageCardThemeStyle: 'neoglow',
   },
 };
 

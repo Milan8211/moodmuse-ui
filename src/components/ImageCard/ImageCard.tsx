@@ -12,14 +12,14 @@ import {
 } from './ImageCard.styled';
 
 export const ImageCard: React.FC<ImageCardProps> = ({
-  $title,
-  $content,
+  $imageCardTitle,
+  $imageCardContent,
   $imageSrc,
   $imageAlt = '',
-  $themeStyle = 'neoglow',
+  $imageCardThemeStyle = 'neoglow',
   $imagePosition = 'top',
-  $size = 'small',
-  $dropShadow = true,
+  $imageCardSize = 'small',
+  $imageCardDropShadow = true,
   ...props
 }) => {
   const theme = useTheme();
@@ -33,23 +33,33 @@ export const ImageCard: React.FC<ImageCardProps> = ({
 
   return (
     <CardWrapper
-      $title={$title}
-      $themeStyle={$themeStyle}
-      $content={$content}
+      $imageCardThemeStyle={$imageCardThemeStyle}
+      $imageCardTitle={$imageCardTitle}
+      $imageCardContent={$imageCardContent}
       $imageSrc={$imageSrc}
       $imageAlt={$imageAlt}
       $imagePosition={$imagePosition}
-      $size={$size}
-      $dropShadow={$dropShadow}
+      $imageCardSize={$imageCardSize}
+      $imageCardDropShadow={$imageCardDropShadow}
       {...props}
     >
-      <ImageWrapper $size={$size} $position={$imagePosition}>
+      <ImageWrapper
+        $imageCardSize={$imageCardSize}
+        $imagePosition={$imagePosition}
+      >
         <CardImage src={$imageSrc} alt={$imageAlt} />
       </ImageWrapper>
-      <TextWrapper $size={$size} $position={$imagePosition}>
+      <TextWrapper
+        $imageCardSize={$imageCardSize}
+        $imagePosition={$imagePosition}
+      >
         <CardHeader>
-          <CardTitle $size={$size}>{$title}</CardTitle>
-          <CardContent $size={$size}>{$content}</CardContent>
+          <CardTitle $imageCardSize={$imageCardSize}>
+            {$imageCardTitle}
+          </CardTitle>
+          <CardContent $imageCardSize={$imageCardSize}>
+            {$imageCardContent}
+          </CardContent>
         </CardHeader>
       </TextWrapper>
     </CardWrapper>

@@ -36,24 +36,24 @@ const themeStyles: Record<
   CardTheme,
   (props: {
     theme: DefaultTheme;
-    $dropShadow?: boolean;
+    $cardDropShadow?: boolean;
   }) => ReturnType<typeof css>
 > = {
-  neoglow: ({ theme, $dropShadow }) => css`
+  neoglow: ({ theme, $cardDropShadow }) => css`
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    ${$dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary}`};
+    ${$cardDropShadow && `box-shadow: 0 0 12px ${theme.colors.primary}`};
 
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 25px ${theme.colors.primary};
     }
   `,
-  brandfocused: ({ theme, $dropShadow }) => css`
+  brandfocused: ({ theme, $cardDropShadow }) => css`
     background-color: ${theme.colors.background};
     border: 1px solid ${theme.colors.border};
-    ${$dropShadow && `box-shadow: 4px 4px 8px ${theme.colors.primary}`};
+    ${$cardDropShadow && `box-shadow: 4px 4px 8px ${theme.colors.primary}`};
     h3 {
       color: #000000;
     }
@@ -77,7 +77,7 @@ const themeStyles: Record<
       box-shadow: 12px 12px 0px ${theme.colors.accent};
     }
   `,
-  gradientglow: ({ theme, $dropShadow }) => css`
+  gradientglow: ({ theme, $cardDropShadow }) => css`
     background: linear-gradient(
       90deg,
       ${theme.colors.primary},
@@ -85,40 +85,40 @@ const themeStyles: Record<
     );
     color: ${theme.colors.background};
     border: none;
-    ${$dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
+    ${$cardDropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
 
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 25px ${theme.colors.primary};
     }
   `,
-  ghostline: ({ theme, $dropShadow }) => css`
+  ghostline: ({ theme, $cardDropShadow }) => css`
     background: transparent;
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.accent};
-    ${$dropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`};
+    ${$cardDropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`};
     &:hover {
       background: ${theme.colors.accent};
       color: ${theme.colors.background};
     }
   `,
-  moodpop: ({ theme, $dropShadow }) => css`
+  moodpop: ({ theme, $cardDropShadow }) => css`
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    ${$dropShadow && `box-shadow: 3px 3px 0px ${theme.colors.primary};`};
+    ${$cardDropShadow && `box-shadow: 3px 3px 0px ${theme.colors.primary};`};
 
     &:hover {
       transform: translate(-5px, -5px);
       box-shadow: 12px 12px 0px ${theme.colors.primary};
     }
   `,
-  monogrid: ({ theme, $dropShadow }) => css`
+  monogrid: ({ theme, $cardDropShadow }) => css`
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.black};
     font-family: 'Courier New', Courier, monospace;
-    ${$dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`};
+    ${$cardDropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`};
 
     &:hover {
       transform: translate(-5px, -5px);
@@ -133,10 +133,10 @@ export const CardWrapper = styled(motion.div)<CardProps>`
   transition: all 0.3s ease-in-out;
   position: relative;
 
-  ${({ $size = 'medium' }) => sizeStyles[$size as CardSize]}
-  ${({ $radius = 'medium' }) => radiusStyles[$radius as CardRadius]}
-  ${({ $themeStyle = 'neoglow', ...props }) =>
-    themeStyles[$themeStyle as CardTheme](
+  ${({ $cardSize = 'medium' }) => sizeStyles[$cardSize as CardSize]}
+  ${({ $cardRadius = 'medium' }) => radiusStyles[$cardRadius as CardRadius]}
+  ${({ $cardThemeStyle = 'neoglow', ...props }) =>
+    themeStyles[$cardThemeStyle as CardTheme](
       props as CardProps & { theme: DefaultTheme },
     )}
 `;
@@ -177,11 +177,11 @@ const sizeTitleStyles = {
   `,
 };
 
-export const CardTitle = styled.h3<{ $size: CardSize }>`
+export const CardTitle = styled.h3<{ $cardSize: CardSize }>`
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
   color: inherit;
   margin: 0;
-  ${({ $size = 'medium' }) => sizeTitleStyles[$size as CardSize]}
+  ${({ $cardSize = 'medium' }) => sizeTitleStyles[$cardSize as CardSize]}
 `;
 
 const sizeContentStyles = {
@@ -196,9 +196,9 @@ const sizeContentStyles = {
   `,
 };
 
-export const CardContent = styled.p<{ $size: CardSize }>`
+export const CardContent = styled.p<{ $cardSize: CardSize }>`
   color: inherit;
   margin: 0;
   line-height: 1.5;
-  ${({ $size = 'medium' }) => sizeContentStyles[$size as CardSize]}
+  ${({ $cardSize = 'medium' }) => sizeContentStyles[$cardSize as CardSize]}
 `;

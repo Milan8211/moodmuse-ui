@@ -11,22 +11,22 @@ const meta: Meta<typeof IconButton> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    $themeStyle: {
+    $iconButtonThemeStyle: {
       control: 'select',
       options: Object.keys(themes),
     },
-    $size: {
+    $iconButtonSize: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    $radius: {
+    $iconButtonRadius: {
       control: 'select',
       options: ['no', 'small', 'medium', 'large', 'pill'],
     },
-    $dropShadow: {
+    $iconButtonDropShadow: {
       control: 'boolean',
     },
-    $label: {
+    $iconButtonLabel: {
       control: 'text',
     },
     disabled: {
@@ -34,12 +34,12 @@ const meta: Meta<typeof IconButton> = {
     },
   },
   args: {
-    $icon: <Icon icon="line-md:home" className="icon" />,
-    $label: 'Home',
-    $size: 'medium',
-    $radius: 'pill',
-    $themeStyle: 'neoglow',
-    $dropShadow: true,
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonLabel: 'Home',
+    $iconButtonSize: 'medium',
+    $iconButtonRadius: 'pill',
+    $iconButtonThemeStyle: 'neoglow',
+    $iconButtonDropShadow: true,
     disabled: false,
   },
 };
@@ -49,84 +49,84 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    $label: 'Home',
-    $icon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonLabel: 'Home',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const NeoGlow: Story = {
   args: {
-    $themeStyle: 'neoglow',
-    $label: 'NeoGlow',
-    $icon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonThemeStyle: 'neoglow',
+    $iconButtonLabel: 'NeoGlow',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const BrandFocused: Story = {
   args: {
-    $themeStyle: 'brandfocused',
-    $icon: <Icon icon="line-md:home" className="icon" />,
-    $label: 'BrandFocused',
+    $iconButtonThemeStyle: 'brandfocused',
+    $iconButtonLabel: 'BrandFocused',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const GradientGlow: Story = {
   args: {
-    $themeStyle: 'gradientglow',
-    $label: 'GradientGlow',
-    $icon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonThemeStyle: 'gradientglow',
+    $iconButtonLabel: 'GradientGlow',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const SoftClay: Story = {
   args: {
-    $themeStyle: 'softclay',
-    $label: 'SoftClay',
-    $icon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonThemeStyle: 'softclay',
+    $iconButtonLabel: 'SoftClay',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const GhostLine: Story = {
   args: {
-    $themeStyle: 'ghostline',
-    $label: 'GhostLine',
-    $icon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonThemeStyle: 'ghostline',
+    $iconButtonLabel: 'GhostLine',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const MoodPop: Story = {
   args: {
-    $themeStyle: 'moodpop',
-    $label: 'MoodPop',
-    $icon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonThemeStyle: 'moodpop',
+    $iconButtonLabel: 'MoodPop',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const MonoGrid: Story = {
   args: {
-    $themeStyle: 'monogrid',
-    $label: 'MonoGrid',
-    $icon: <Icon icon="line-md:home" className="icon" />,
+    $iconButtonThemeStyle: 'monogrid',
+    $iconButtonLabel: 'MonoGrid',
+    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const Large: Story = {
   args: {
-    $size: 'large',
-    $label: 'Large',
+    $iconButtonSize: 'large',
+    $iconButtonLabel: 'Large',
   },
 };
 
 export const Small: Story = {
   args: {
-    $size: 'small',
-    $label: 'Small',
+    $iconButtonSize: 'small',
+    $iconButtonLabel: 'Small',
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    $label: 'Disabled',
+    $iconButtonLabel: 'Disabled',
   },
 };
