@@ -19,7 +19,6 @@ export const Card: React.FC<CardProps> = ({
   $cardRadius = 'medium',
   $cardSize = 'medium',
   $cardDropShadow = true,
-  ...props
 }) => {
   const theme = useTheme();
 
@@ -39,7 +38,6 @@ export const Card: React.FC<CardProps> = ({
       $cardSize={$cardSize}
       $cardDropShadow={$cardDropShadow}
       transition={{ type: 'spring', stiffness: 300 }}
-      {...props}
     >
       <TextWrapper>
         <CardHeader>

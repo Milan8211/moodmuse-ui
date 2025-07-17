@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { useTheme } from 'styled-components';
 import type { InputProps } from './Input.types.js';
 import { InputWrapper, StyledInput, Label } from './Input.styled.js';
@@ -18,8 +18,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     ref,
   ) => {
     const theme = useTheme();
-    const inputId =
-      props.id || `input-${Math.random().toString(36).substring(2, 9)}`;
+    const generatedId = useId();
+    const inputId = props.id || generatedId;
 
     if (!theme) {
       console.error(

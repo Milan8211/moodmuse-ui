@@ -51,7 +51,10 @@ const positionStyles: Record<ImageCardPosition, ReturnType<typeof css>> = {
   `,
 };
 
-export const CardWrapper = styled(motion.div)<ImageCardProps>`
+export const CardWrapper = styled(motion.div).withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<ImageCardProps>`
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease-in-out;
@@ -70,10 +73,10 @@ export const CardWrapper = styled(motion.div)<ImageCardProps>`
   }
 `;
 
-export const ImageWrapper = styled.div<{
-  $imagePosition: ImageCardPosition;
-  $imageCardSize: ImageCardSize;
-}>`
+export const ImageWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<{ $imagePosition: ImageCardPosition; $imageCardSize: ImageCardSize }>`
   flex-shrink: 0;
   transition: all 0.3s ease-in-out;
   ${({ $imageCardSize }) => sizeImageStyles[$imageCardSize as ImageCardSize]}
@@ -93,10 +96,10 @@ export const CardImage = styled.img`
   object-fit: cover;
 `;
 
-export const TextWrapper = styled.div<{
-  $imagePosition?: ImageCardPosition;
-  $imageCardSize: ImageCardSize;
-}>`
+export const TextWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<{ $imagePosition?: ImageCardPosition; $imageCardSize: ImageCardSize }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,7 +135,10 @@ const sizeTitleStyles = {
   `,
 };
 
-export const CardTitle = styled.h3<{ $imageCardSize: ImageCardSize }>`
+export const CardTitle = styled.h3.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<{ $imageCardSize: ImageCardSize }>`
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
   color: #000000;
   margin: 0;
@@ -152,7 +158,10 @@ const sizeContentStyles = {
   `,
 };
 
-export const CardContent = styled.p<{ $imageCardSize: ImageCardSize }>`
+export const CardContent = styled.p.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<{ $imageCardSize: ImageCardSize }>`
   color: #3b3b3b;
   margin: 0;
   line-height: 1.5;

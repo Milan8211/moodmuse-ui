@@ -20,5 +20,4 @@ export interface CardProps {
   $cardContent: string;
   $cardAvatar?: ReactNode;
   $cardIcon?: ReactNode;
-  className?: string;
 }

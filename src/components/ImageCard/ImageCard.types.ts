@@ -14,7 +14,6 @@ export interface ImageCardProps {
   $imageCardDropShadow?: boolean;
   $imageCardTitle?: string;
   $imageCardContent?: string;
-  className?: string;
   $imageSrc?: string;
   $imageAlt?: string;
   $imagePosition?: ImageCardPosition;

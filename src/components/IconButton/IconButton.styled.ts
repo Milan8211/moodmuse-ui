@@ -143,7 +143,10 @@ const themeStyles: Record<
   `,
 };
 
-export const StyledButton = styled(motion.button)<IconButtonProps>`
+export const StyledButton = styled(motion.button).withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<IconButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;

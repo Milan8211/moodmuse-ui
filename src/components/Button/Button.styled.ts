@@ -7,6 +7,7 @@ import type {
   ButtonRadius,
 } from './Button.types';
 
+// --- Helpers ---
 const sizeStyles = {
   small: css`
     padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
@@ -127,6 +128,7 @@ const themeStyles: Record<
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.accent};
     ${$buttonDropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`};
+
     &:hover {
       background: ${theme.colors.accent};
       color: ${theme.colors.background};
@@ -138,6 +140,7 @@ const themeStyles: Record<
     border: none;
     font-weight: bold;
     ${$buttonDropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
+
     &:hover {
       color: #ffffff;
       background: ${theme.colors.secondary};
@@ -149,6 +152,7 @@ const themeStyles: Record<
     border: 2px solid ${theme.colors.primary};
     font-family: 'Courier New', Courier, monospace;
     ${$buttonDropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
+
     &:hover {
       background: ${theme.colors.primary};
       color: ${theme.colors.background};
@@ -158,14 +162,17 @@ const themeStyles: Record<
   `,
 };
 
-export const StyledButton = styled(motion.button)<ButtonProps>`
+// --- ✅ Styled Button with Transient Prop Handling ---
+export const StyledButton = styled(motion.button).withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<ButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.xs};
   font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
   font-weight: ${({ theme }) => theme.typography.fontWeights.medium};
-  border-radius: ${({ theme }) => theme.borderRadius.md};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 

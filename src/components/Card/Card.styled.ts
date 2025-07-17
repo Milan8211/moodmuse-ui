@@ -70,10 +70,10 @@ const themeStyles: Record<
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    box-shadow: 3px 3px 0px ${theme.colors.accent};
+    box-shadow: 5px 5px 0px ${theme.colors.accent};
 
     &:hover {
-      transform: translate(-5px, -5px);
+      transform: translate(-4px, -4px);
       box-shadow: 12px 12px 0px ${theme.colors.accent};
     }
   `,
@@ -127,7 +127,10 @@ const themeStyles: Record<
   `,
 };
 
-export const CardWrapper = styled(motion.div)<CardProps>`
+export const CardWrapper = styled(motion.div).withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<CardProps>`
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease-in-out;
@@ -177,7 +180,10 @@ const sizeTitleStyles = {
   `,
 };
 
-export const CardTitle = styled.h3<{ $cardSize: CardSize }>`
+export const CardTitle = styled.h3.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<{ $cardSize: CardSize }>`
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
   color: inherit;
   margin: 0;
@@ -196,7 +202,10 @@ const sizeContentStyles = {
   `,
 };
 
-export const CardContent = styled.p<{ $cardSize: CardSize }>`
+export const CardContent = styled.p.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<{ $cardSize: CardSize }>`
   color: inherit;
   margin: 0;
   line-height: 1.5;

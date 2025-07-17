@@ -11,7 +11,6 @@ export const Button: React.FC<ButtonProps> = ({
   $disabled = false,
   $buttonRadius = 'medium',
   $buttonDropShadow = true,
-  ...props
 }) => {
   return (
     <StyledButton
@@ -20,7 +19,6 @@ export const Button: React.FC<ButtonProps> = ({
       $disabled={$disabled}
       $buttonRadius={$buttonRadius}
       $buttonDropShadow={$buttonDropShadow}
-      {...props}
     >
       {$buttonLeftIcon}
       <span>{children}</span>

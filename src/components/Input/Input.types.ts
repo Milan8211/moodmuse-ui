@@ -20,5 +20,4 @@ export interface InputProps
   $inputRadius?: InputRadius;
   $inputLeftIcon?: ReactNode;
   $inputRightIcon?: ReactNode;
-  className?: string;
 }

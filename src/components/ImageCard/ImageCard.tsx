@@ -20,7 +20,6 @@ export const ImageCard: React.FC<ImageCardProps> = ({
   $imagePosition = 'top',
   $imageCardSize = 'small',
   $imageCardDropShadow = true,
-  ...props
 }) => {
   const theme = useTheme();
 
@@ -41,7 +40,6 @@ export const ImageCard: React.FC<ImageCardProps> = ({
       $imagePosition={$imagePosition}
       $imageCardSize={$imageCardSize}
       $imageCardDropShadow={$imageCardDropShadow}
-      {...props}
     >
       <ImageWrapper
         $imageCardSize={$imageCardSize}

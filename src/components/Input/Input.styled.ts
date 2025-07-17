@@ -162,7 +162,10 @@ const themeStyles: Record<
   `,
 };
 
-export const InputWrapper = styled.div<InputProps>`
+export const InputWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<InputProps>`
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -184,7 +187,10 @@ export const InputWrapper = styled.div<InputProps>`
   }
 `;
 
-export const StyledInput = styled.input<InputProps>`
+export const StyledInput = styled.input.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<InputProps>`
   width: 100%;
   border: none;
   outline: none;
@@ -199,7 +205,10 @@ export const StyledInput = styled.input<InputProps>`
   }
 `;
 
-export const Label = styled.label<InputProps>`
+export const Label = styled.label.withConfig({
+  shouldForwardProp: (prop) =>
+    typeof prop === 'string' && !prop.startsWith('$'),
+})<InputProps>`
   display: block;
   font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
   ${({ $inputSize = 'medium' }) => labelSizeStyles[$inputSize as InputSize]}
