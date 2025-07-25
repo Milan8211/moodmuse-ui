@@ -4,25 +4,29 @@ import { StyledButton } from './Button.styled';
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  $buttonSize = 'medium',
-  $buttonThemeStyle = 'neoglow',
-  $buttonLeftIcon,
-  $buttonRightIcon,
-  $disabled = false,
-  $buttonRadius = 'medium',
-  $buttonDropShadow = true,
+  $size = 'medium',
+  $themeStyle = 'neoglow',
+  leftIcon,
+  rightIcon,
+  disabled = false,
+  $radius = 'medium',
+  $dropShadow = true,
+  $customClass,
+  ...props
 }) => {
   return (
     <StyledButton
-      $buttonSize={$buttonSize}
-      $buttonThemeStyle={$buttonThemeStyle}
-      $disabled={$disabled}
-      $buttonRadius={$buttonRadius}
-      $buttonDropShadow={$buttonDropShadow}
+      $size={$size}
+      $themeStyle={$themeStyle}
+      disabled={disabled}
+      $radius={$radius}
+      $dropShadow={$dropShadow}
+      className={$customClass}
+      {...props}
     >
-      {$buttonLeftIcon}
-      <span>{children}</span>
-      {$buttonRightIcon}
+      {leftIcon}
+      {children}
+      {rightIcon}
     </StyledButton>
   );
 };

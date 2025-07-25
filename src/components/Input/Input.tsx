@@ -6,13 +6,14 @@ import { InputWrapper, StyledInput, Label } from './Input.styled.js';
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
-      $inputLabel,
-      $inputLeftIcon,
-      $inputRightIcon,
-      $inputThemeStyle = 'neoglow',
-      $inputSize = 'medium',
-      $inputRadius = 'medium',
-      $inputDropShadow = true,
+      label,
+      leftIcon,
+      rightIcon,
+      $themeStyle = 'neoglow',
+      $size = 'medium',
+      $radius = 'medium',
+      $dropShadow = true,
+      $customClass,
       ...props
     },
     ref,
@@ -29,21 +30,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     }
 
     return (
-      <div>
-        {$inputLabel && (
-          <Label $inputSize={$inputSize} htmlFor={inputId}>
-            {$inputLabel}
+      <div className={$customClass}>
+        {label && (
+          <Label $size={$size} htmlFor={inputId}>
+            {label}
           </Label>
         )}
         <InputWrapper
-          $inputThemeStyle={$inputThemeStyle}
-          $inputSize={$inputSize}
-          $inputRadius={$inputRadius}
-          $inputDropShadow={$inputDropShadow}
+          $themeStyle={$themeStyle}
+          $size={$size}
+          $radius={$radius}
+          $dropShadow={$dropShadow}
+          {...props}
         >
-          {$inputLeftIcon}
+          {leftIcon}
           <StyledInput id={inputId} ref={ref} {...props} />
-          {$inputRightIcon}
+          {rightIcon}
         </InputWrapper>
       </div>
     );

@@ -12,14 +12,16 @@ import {
 } from './ImageCard.styled';
 
 export const ImageCard: React.FC<ImageCardProps> = ({
-  $imageCardTitle,
-  $imageCardContent,
-  $imageSrc,
-  $imageAlt = '',
-  $imageCardThemeStyle = 'neoglow',
-  $imagePosition = 'top',
-  $imageCardSize = 'small',
-  $imageCardDropShadow = true,
+  title,
+  content,
+  src,
+  alt = '',
+  $themeStyle = 'neoglow',
+  $position = 'top',
+  $size = 'small',
+  $dropShadow = true,
+  $customClass,
+  ...props
 }) => {
   const theme = useTheme();
 
@@ -32,32 +34,24 @@ export const ImageCard: React.FC<ImageCardProps> = ({
 
   return (
     <CardWrapper
-      $imageCardThemeStyle={$imageCardThemeStyle}
-      $imageCardTitle={$imageCardTitle}
-      $imageCardContent={$imageCardContent}
-      $imageSrc={$imageSrc}
-      $imageAlt={$imageAlt}
-      $imagePosition={$imagePosition}
-      $imageCardSize={$imageCardSize}
-      $imageCardDropShadow={$imageCardDropShadow}
+      $themeStyle={$themeStyle}
+      title={title}
+      content={content}
+      src={src}
+      alt={alt}
+      $position={$position}
+      $size={$size}
+      $dropShadow={$dropShadow}
+      className={$customClass}
+      {...props}
     >
-      <ImageWrapper
-        $imageCardSize={$imageCardSize}
-        $imagePosition={$imagePosition}
-      >
-        <CardImage src={$imageSrc} alt={$imageAlt} />
+      <ImageWrapper $size={$size} $position={$position}>
+        <CardImage src={src} alt={alt} />
       </ImageWrapper>
-      <TextWrapper
-        $imageCardSize={$imageCardSize}
-        $imagePosition={$imagePosition}
-      >
+      <TextWrapper $size={$size} $position={$position}>
         <CardHeader>
-          <CardTitle $imageCardSize={$imageCardSize}>
-            {$imageCardTitle}
-          </CardTitle>
-          <CardContent $imageCardSize={$imageCardSize}>
-            {$imageCardContent}
-          </CardContent>
+          <CardTitle $size={$size}>{title}</CardTitle>
+          <CardContent $size={$size}>{content}</CardContent>
         </CardHeader>
       </TextWrapper>
     </CardWrapper>

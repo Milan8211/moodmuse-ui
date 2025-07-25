@@ -60,8 +60,8 @@ export const CardWrapper = styled(motion.div).withConfig({
   transition: all 0.3s ease-in-out;
   position: relative;
   width: 100%;
-  ${({ $imagePosition }) =>
-    $imagePosition && positionStyles[$imagePosition as ImageCardPosition]}
+  ${({ $position }) =>
+    $position && positionStyles[$position as ImageCardPosition]}
 
   &:hover {
     > div {
@@ -76,16 +76,16 @@ export const CardWrapper = styled(motion.div).withConfig({
 export const ImageWrapper = styled.div.withConfig({
   shouldForwardProp: (prop) =>
     typeof prop === 'string' && !prop.startsWith('$'),
-})<{ $imagePosition: ImageCardPosition; $imageCardSize: ImageCardSize }>`
+})<{ $position: ImageCardPosition; $size: ImageCardSize }>`
   flex-shrink: 0;
   transition: all 0.3s ease-in-out;
-  ${({ $imageCardSize }) => sizeImageStyles[$imageCardSize as ImageCardSize]}
-  ${({ $imagePosition }) =>
-    $imagePosition === 'left'
+  ${({ $size }) => sizeImageStyles[$size as ImageCardSize]}
+  ${({ $position }) =>
+    $position === 'left'
       ? 'position: absolute; width: 45%; height: 100%; top: 0; left: 0;'
-      : $imagePosition === 'right'
+      : $position === 'right'
         ? 'position: absolute; width: 45%; height: 100%; top: 0; right: 0;'
-        : $imagePosition === 'bottom'
+        : $position === 'bottom'
           ? 'width: 100%; height: 100%; position: relative; bottom: -4px;'
           : 'width: 100%; height: 100%;'}
 `;
@@ -99,17 +99,17 @@ export const CardImage = styled.img`
 export const TextWrapper = styled.div.withConfig({
   shouldForwardProp: (prop) =>
     typeof prop === 'string' && !prop.startsWith('$'),
-})<{ $imagePosition?: ImageCardPosition; $imageCardSize: ImageCardSize }>`
+})<{ $position?: ImageCardPosition; $size: ImageCardSize }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${({ $imageCardSize }) => sizeTextStyles[$imageCardSize as ImageCardSize]}
-  ${({ $imagePosition }) =>
-    $imagePosition === 'left'
+  ${({ $size }) => sizeTextStyles[$size as ImageCardSize]}
+  ${({ $position }) =>
+    $position === 'left'
       ? 'width: 55%; height: 100%; padding: 0 0 0 1.5rem;'
-      : $imagePosition === 'right'
+      : $position === 'right'
         ? 'width: 55%; height: 100%; padding: 0 1.5rem 0 0;'
-        : $imagePosition === 'bottom'
+        : $position === 'bottom'
           ? 'width: 100%; height: 100%; padding: 0 0 1.5rem 0;'
           : 'width: 100%; height: 100%; padding: 1.5rem 0 0 0;'}
 `;
@@ -138,12 +138,11 @@ const sizeTitleStyles = {
 export const CardTitle = styled.h3.withConfig({
   shouldForwardProp: (prop) =>
     typeof prop === 'string' && !prop.startsWith('$'),
-})<{ $imageCardSize: ImageCardSize }>`
+})<{ $size: ImageCardSize }>`
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
   color: #000000;
   margin: 0;
-  ${({ $imageCardSize = 'medium' }) =>
-    sizeTitleStyles[$imageCardSize as ImageCardSize]}
+  ${({ $size = 'medium' }) => sizeTitleStyles[$size as ImageCardSize]}
 `;
 
 const sizeContentStyles = {
@@ -161,10 +160,9 @@ const sizeContentStyles = {
 export const CardContent = styled.p.withConfig({
   shouldForwardProp: (prop) =>
     typeof prop === 'string' && !prop.startsWith('$'),
-})<{ $imageCardSize: ImageCardSize }>`
+})<{ $size: ImageCardSize }>`
   color: #3b3b3b;
   margin: 0;
   line-height: 1.5;
-  ${({ $imageCardSize = 'medium' }) =>
-    sizeContentStyles[$imageCardSize as ImageCardSize]}
+  ${({ $size = 'medium' }) => sizeContentStyles[$size as ImageCardSize]}
 `;

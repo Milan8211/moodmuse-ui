@@ -136,10 +136,10 @@ export const CardWrapper = styled(motion.div).withConfig({
   transition: all 0.3s ease-in-out;
   position: relative;
 
-  ${({ $cardSize = 'medium' }) => sizeStyles[$cardSize as CardSize]}
-  ${({ $cardRadius = 'medium' }) => radiusStyles[$cardRadius as CardRadius]}
-  ${({ $cardThemeStyle = 'neoglow', ...props }) =>
-    themeStyles[$cardThemeStyle as CardTheme](
+  ${({ $size = 'medium' }) => sizeStyles[$size as CardSize]}
+  ${({ $radius = 'medium' }) => radiusStyles[$radius as CardRadius]}
+  ${({ $themeStyle = 'neoglow', ...props }) =>
+    themeStyles[$themeStyle as CardTheme](
       props as CardProps & { theme: DefaultTheme },
     )}
 `;
@@ -183,11 +183,11 @@ const sizeTitleStyles = {
 export const CardTitle = styled.h3.withConfig({
   shouldForwardProp: (prop) =>
     typeof prop === 'string' && !prop.startsWith('$'),
-})<{ $cardSize: CardSize }>`
+})<{ $size: CardSize }>`
   font-weight: ${({ theme }) => theme.typography.fontWeights.bold};
   color: inherit;
   margin: 0;
-  ${({ $cardSize = 'medium' }) => sizeTitleStyles[$cardSize as CardSize]}
+  ${({ $size = 'medium' }) => sizeTitleStyles[$size as CardSize]}
 `;
 
 const sizeContentStyles = {
@@ -205,9 +205,9 @@ const sizeContentStyles = {
 export const CardContent = styled.p.withConfig({
   shouldForwardProp: (prop) =>
     typeof prop === 'string' && !prop.startsWith('$'),
-})<{ $cardSize: CardSize }>`
+})<{ $size: CardSize }>`
   color: inherit;
   margin: 0;
   line-height: 1.5;
-  ${({ $cardSize = 'medium' }) => sizeContentStyles[$cardSize as CardSize]}
+  ${({ $size = 'medium' }) => sizeContentStyles[$size as CardSize]}
 `;

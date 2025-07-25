@@ -10,12 +10,13 @@ export type ImageCardTheme =
   | 'monogrid';
 
 export interface ImageCardProps {
-  $imageCardSize?: ImageCardSize;
-  $imageCardDropShadow?: boolean;
-  $imageCardTitle?: string;
-  $imageCardContent?: string;
-  $imageSrc?: string;
-  $imageAlt?: string;
-  $imagePosition?: ImageCardPosition;
-  $imageCardThemeStyle?: ImageCardTheme;
+  $size?: ImageCardSize;
+  $dropShadow?: boolean;
+  title?: string;
+  content?: string;
+  src?: string;
+  alt?: string;
+  $position?: ImageCardPosition;
+  $themeStyle?: ImageCardTheme;
+  $customClass?: string;
 }

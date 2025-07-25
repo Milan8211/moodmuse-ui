@@ -13,11 +13,12 @@ export type InputTheme =
 
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  $inputLabel?: string;
-  $inputSize?: InputSize;
-  $inputThemeStyle?: InputTheme;
-  $inputDropShadow?: boolean;
-  $inputRadius?: InputRadius;
-  $inputLeftIcon?: ReactNode;
-  $inputRightIcon?: ReactNode;
+  label?: string;
+  $size?: InputSize;
+  $themeStyle?: InputTheme;
+  $dropShadow?: boolean;
+  $radius?: InputRadius;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  $customClass?: string;
 }

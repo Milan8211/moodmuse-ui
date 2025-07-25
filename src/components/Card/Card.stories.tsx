@@ -10,7 +10,7 @@ const meta: Meta<typeof Card> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    $cardThemeStyle: {
+    $themeStyle: {
       control: 'select',
       options: [
         'neoglow',
@@ -22,31 +22,31 @@ const meta: Meta<typeof Card> = {
         'monogrid',
       ],
     },
-    $cardRadius: {
+    $radius: {
       control: 'select',
       options: ['no', 'small', 'medium', 'large'],
     },
-    $cardSize: {
+    $size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    $cardDropShadow: {
+    $dropShadow: {
       control: 'boolean',
     },
-    $cardTitle: {
+    title: {
       control: 'text',
     },
-    $cardContent: {
+    content: {
       control: 'text',
     },
   },
   args: {
-    $cardThemeStyle: 'neoglow',
-    $cardRadius: 'medium',
-    $cardSize: 'small',
-    $cardDropShadow: true,
-    $cardTitle: 'Card Title',
-    $cardContent:
+    $themeStyle: 'neoglow',
+    $radius: 'medium',
+    $size: 'small',
+    $dropShadow: true,
+    title: 'Card Title',
+    content:
       'This is the card content. It can be a short description or any other information.',
   },
 };
@@ -58,58 +58,58 @@ export const Default: Story = {};
 
 export const WithAvatar: Story = {
   args: {
-    $cardAvatar: <img src="https://i.pravatar.cc/48" alt="Avatar" />,
-    $cardTitle: 'User Card',
-    $cardContent: 'This card represents a user profile with an avatar.',
+    avatar: <img src="https://i.pravatar.cc/48" alt="Avatar" />,
+    title: 'User Card',
+    content: 'This card represents a user profile with an avatar.',
   },
 };
 
 export const WithIcon: Story = {
   args: {
-    $cardIcon: <Icon icon="mdi:star-circle-outline" width="48" height="48" />,
-    $cardTitle: 'Feature Card',
-    $cardContent: 'This card highlights a specific feature using an icon.',
+    icon: <Icon icon="mdi:star-circle-outline" width="48" height="48" />,
+    title: 'Feature Card',
+    content: 'This card highlights a specific feature using an icon.',
   },
 };
 
 export const NeoGlow: Story = {
   args: {
-    $cardThemeStyle: 'neoglow',
+    $themeStyle: 'neoglow',
   },
 };
 
 export const BrandFocused: Story = {
   args: {
-    $cardThemeStyle: 'brandfocused',
+    $themeStyle: 'brandfocused',
   },
 };
 
 export const SoftClay: Story = {
   args: {
-    $cardThemeStyle: 'softclay',
+    $themeStyle: 'softclay',
   },
 };
 
 export const GradientGlow: Story = {
   args: {
-    $cardThemeStyle: 'gradientglow',
+    $themeStyle: 'gradientglow',
   },
 };
 
 export const GhostLine: Story = {
   args: {
-    $cardThemeStyle: 'ghostline',
+    $themeStyle: 'ghostline',
   },
 };
 
 export const MoodPop: Story = {
   args: {
-    $cardThemeStyle: 'moodpop',
+    $themeStyle: 'moodpop',
   },
 };
 
 export const MonoGrid: Story = {
   args: {
-    $cardThemeStyle: 'monogrid',
+    $themeStyle: 'monogrid',
   },
 };

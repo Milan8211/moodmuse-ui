@@ -70,29 +70,29 @@ const themeStyles: Record<
   InputTheme,
   (props: {
     theme: DefaultTheme;
-    $inputDropShadow?: boolean;
+    $dropShadow?: boolean;
   }) => ReturnType<typeof css>
 > = {
-  neoglow: ({ theme, $inputDropShadow }) => css`
+  neoglow: ({ theme, $dropShadow }) => css`
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
-    ${$inputDropShadow && `box-shadow: 0 0 8px ${theme.colors.primary}`};
+    ${$dropShadow && `box-shadow: 0 0 8px ${theme.colors.primary}`};
 
     &:focus-within {
       border-color: ${theme.colors.secondary};
-      ${$inputDropShadow && `box-shadow: 0 0 12px ${theme.colors.secondary}`};
+      ${$dropShadow && `box-shadow: 0 0 12px ${theme.colors.secondary}`};
     }
   `,
-  brandfocused: ({ theme, $inputDropShadow }) => css`
+  brandfocused: ({ theme, $dropShadow }) => css`
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 1px solid ${theme.colors.border};
-    ${$inputDropShadow && `box-shadow: 2px 2px 4px rgba(0,0,0,0.1);`}
+    ${$dropShadow && `box-shadow: 2px 2px 4px rgba(0,0,0,0.1);`}
 
     &:focus-within {
       border-color: ${theme.colors.primary};
-      ${$inputDropShadow && `box-shadow: 0 0 8px ${theme.colors.primary};`}
+      ${$dropShadow && `box-shadow: 0 0 8px ${theme.colors.primary};`}
     }
   `,
   gradientglow: ({ theme }) => css`
@@ -118,43 +118,43 @@ const themeStyles: Record<
       );
     }
   `,
-  softclay: ({ theme, $inputDropShadow }) => css`
+  softclay: ({ theme, $dropShadow }) => css`
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.accent};
-    ${$inputDropShadow && `box-shadow: 2px 2px 5px ${theme.colors.accent};`}
+    ${$dropShadow && `box-shadow: 2px 2px 5px ${theme.colors.accent};`}
 
     &:focus-within {
       border-color: ${theme.colors.primary};
     }
   `,
-  ghostline: ({ theme, $inputDropShadow }) => css`
+  ghostline: ({ theme, $dropShadow }) => css`
     background: transparent;
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.accent};
-    ${$inputDropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`}
+    ${$dropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`}
 
     &:focus-within {
       border-color: ${theme.colors.accent};
     }
   `,
-  moodpop: ({ theme, $inputDropShadow }) => css`
+  moodpop: ({ theme, $dropShadow }) => css`
     background-color: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
     font-weight: bold;
-    ${$inputDropShadow && `box-shadow: 3px 3px 0px ${theme.colors.secondary};`}
+    ${$dropShadow && `box-shadow: 3px 3px 0px ${theme.colors.secondary};`}
 
     &:focus-within {
       border-color: ${theme.colors.secondary};
     }
   `,
-  monogrid: ({ theme, $inputDropShadow }) => css`
+  monogrid: ({ theme, $dropShadow }) => css`
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.black};
     font-family: 'Courier New', Courier, monospace;
-    ${$inputDropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
+    ${$dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
 
     &:focus-within {
       border-color: ${theme.colors.primary};
@@ -172,9 +172,9 @@ export const InputWrapper = styled.div.withConfig({
   font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
   transition: all 0.2s ease-in-out;
 
-  ${({ $inputSize = 'medium' }) => sizeStyles[$inputSize as InputSize]}
-  ${({ $inputRadius = 'medium' }) => radiusStyles[$inputRadius as InputRadius]}
-  ${(props) => themeStyles[props.$inputThemeStyle || 'neoglow'](props)}
+  ${({ $size = 'medium' }) => sizeStyles[$size as InputSize]}
+  ${({ $radius = 'medium' }) => radiusStyles[$radius as InputRadius]}
+  ${(props) => themeStyles[props.$themeStyle || 'neoglow'](props)}
 
   & > svg {
     color: ${({ theme }) => theme.colors.gray500};
@@ -211,7 +211,7 @@ export const Label = styled.label.withConfig({
 })<InputProps>`
   display: block;
   font-family: ${({ theme }) => theme.typography.fontFamilies.roboto};
-  ${({ $inputSize = 'medium' }) => labelSizeStyles[$inputSize as InputSize]}
+  ${({ $size = 'medium' }) => labelSizeStyles[$size as InputSize]}
   color: ${({ theme }) => theme.colors.label};
   font-weight: ${({ theme }) => theme.typography.fontWeights.regular};
 `;

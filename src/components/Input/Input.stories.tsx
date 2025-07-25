@@ -10,7 +10,7 @@ const meta: Meta<typeof Input> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    $inputThemeStyle: {
+    $themeStyle: {
       control: 'select',
       options: [
         'neoglow',
@@ -22,15 +22,15 @@ const meta: Meta<typeof Input> = {
         'monogrid',
       ],
     },
-    $inputSize: {
+    $size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    $inputRadius: {
+    $radius: {
       control: 'select',
       options: ['no', 'small', 'medium', 'large', 'pill'],
     },
-    $inputDropShadow: {
+    $dropShadow: {
       control: 'boolean',
     },
     disabled: {
@@ -39,18 +39,18 @@ const meta: Meta<typeof Input> = {
     placeholder: {
       control: 'text',
     },
-    $inputLabel: {
+    label: {
       control: 'text',
     },
   },
   args: {
-    $inputThemeStyle: 'neoglow',
-    $inputSize: 'medium',
-    $inputRadius: 'medium',
-    $inputDropShadow: true,
+    $themeStyle: 'neoglow',
+    $size: 'medium',
+    $radius: 'medium',
+    $dropShadow: true,
     disabled: false,
     placeholder: 'Enter text...',
-    $inputLabel: 'Username',
+    label: 'Username',
   },
 };
 
@@ -61,49 +61,49 @@ export const Default: Story = {};
 
 export const WithIcons: Story = {
   args: {
-    $inputLeftIcon: <Icon icon="mdi:account" />,
-    $inputRightIcon: <Icon icon="mdi:eye" />,
+    leftIcon: <Icon icon="mdi:account" />,
+    rightIcon: <Icon icon="mdi:eye" />,
   },
 };
 
 export const NeoGlow: Story = {
   args: {
-    $inputThemeStyle: 'neoglow',
+    $themeStyle: 'neoglow',
   },
 };
 
 export const BrandFocused: Story = {
   args: {
-    $inputThemeStyle: 'brandfocused',
+    $themeStyle: 'brandfocused',
   },
 };
 
 export const GradientGlow: Story = {
   args: {
-    $inputThemeStyle: 'gradientglow',
+    $themeStyle: 'gradientglow',
   },
 };
 
 export const SoftClay: Story = {
   args: {
-    $inputThemeStyle: 'softclay',
+    $themeStyle: 'softclay',
   },
 };
 
 export const GhostLine: Story = {
   args: {
-    $inputThemeStyle: 'ghostline',
+    $themeStyle: 'ghostline',
   },
 };
 
 export const MoodPop: Story = {
   args: {
-    $inputThemeStyle: 'moodpop',
+    $themeStyle: 'moodpop',
   },
 };
 
 export const MonoGrid: Story = {
   args: {
-    $inputThemeStyle: 'monogrid',
+    $themeStyle: 'monogrid',
   },
 };

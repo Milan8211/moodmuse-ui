@@ -44,17 +44,17 @@ const themeStyles: Record<
   IconButtonTheme,
   (props: IconButtonProps & { theme: DefaultTheme }) => ReturnType<typeof css>
 > = {
-  neoglow: ({ theme, $iconButtonDropShadow }) => css`
+  neoglow: ({ theme, $dropShadow }) => css`
     background-color: ${theme.colors.primary};
     color: ${theme.colors.background};
     border: 2px solid ${theme.colors.primary};
-    ${$iconButtonDropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
+    ${$dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
   `,
-  brandfocused: ({ theme, $iconButtonDropShadow }) => css`
+  brandfocused: ({ theme, $dropShadow }) => css`
     background-color: transparent;
     color: ${theme.colors.text};
     border: 1px solid ${theme.colors.border};
-    ${$iconButtonDropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
+    ${$dropShadow && `box-shadow: 0 4px 12px 1px rgba(0,0,0,0.1);`}
 
     &:hover {
       background-color: ${theme.colors.primary};
@@ -64,8 +64,7 @@ const themeStyles: Record<
 
     &:active {
       border-color: #ffd3d3;
-      ${$iconButtonDropShadow &&
-      `box-shadow: 0 4px 12px 1px rgba(255,88,88,1);`}
+      ${$dropShadow && `box-shadow: 0 4px 12px 1px rgba(255,88,88,1);`}
     }
 
     &:disabled {
@@ -75,7 +74,7 @@ const themeStyles: Record<
       opacity: 1 !important;
     }
   `,
-  gradientglow: ({ theme, $iconButtonDropShadow }) => css`
+  gradientglow: ({ theme, $dropShadow }) => css`
     background: linear-gradient(
       90deg,
       ${theme.colors.primary},
@@ -83,7 +82,7 @@ const themeStyles: Record<
     );
     color: ${theme.colors.background};
     border: none;
-    ${$iconButtonDropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
+    ${$dropShadow && `box-shadow: 0 0 12px ${theme.colors.primary};`}
 
     &:hover {
       transform: scale(1.05);
@@ -104,37 +103,36 @@ const themeStyles: Record<
       opacity: 1 !important;
     }
   `,
-  softclay: ({ theme, $iconButtonDropShadow }) => css`
+  softclay: ({ theme, $dropShadow }) => css`
     background-color: ${theme.colors.primary};
     color: ${theme.colors.surface};
     border: 2px solid ${theme.colors.primary};
-    ${$iconButtonDropShadow && `box-shadow: 2px 2px 5px rgba(0,0,0,0.2);`}
+    ${$dropShadow && `box-shadow: 2px 2px 5px rgba(0,0,0,0.2);`}
   `,
-  ghostline: ({ theme, $iconButtonDropShadow }) => css`
+  ghostline: ({ theme, $dropShadow }) => css`
     background: transparent;
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.accent};
-    ${$iconButtonDropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`}
+    ${$dropShadow && `box-shadow: 0 0 8px ${theme.colors.accent};`}
 
     &:hover {
       background: ${theme.colors.accent};
       color: ${theme.colors.background};
     }
   `,
-  moodpop: ({ theme, $iconButtonDropShadow }) => css`
+  moodpop: ({ theme, $dropShadow }) => css`
     background: ${theme.colors.primary};
     color: ${theme.colors.background};
     border: none;
     font-weight: medium;
-    ${$iconButtonDropShadow &&
-    `box-shadow: 3px 3px 0px ${theme.colors.secondary};`}
+    ${$dropShadow && `box-shadow: 3px 3px 0px ${theme.colors.secondary};`}
   `,
-  monogrid: ({ theme, $iconButtonDropShadow }) => css`
+  monogrid: ({ theme, $dropShadow }) => css`
     background: ${theme.colors.surface};
     color: ${theme.colors.text};
     border: 2px solid ${theme.colors.primary};
     font-family: 'Courier New', Courier, monospace;
-    ${$iconButtonDropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
+    ${$dropShadow && `box-shadow: 4px 4px 0px ${theme.colors.black};`}
 
     &:hover {
       background: ${theme.colors.primary};
@@ -160,12 +158,10 @@ export const StyledButton = styled(motion.button).withConfig({
     color 1s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: color;
 
-  ${({ $iconButtonSize = 'medium' }) =>
-    sizeStyles[$iconButtonSize as IconButtonSize]}
-  ${({ $iconButtonRadius = 'medium' }) =>
-    radiusStyles[$iconButtonRadius as IconButtonRadius]}
-  ${({ $iconButtonThemeStyle = 'neoglow', ...props }) =>
-    themeStyles[$iconButtonThemeStyle as IconButtonTheme](
+  ${({ $size = 'medium' }) => sizeStyles[$size as IconButtonSize]}
+  ${({ $radius = 'medium' }) => radiusStyles[$radius as IconButtonRadius]}
+  ${({ $themeStyle = 'neoglow', ...props }) =>
+    themeStyles[$themeStyle as IconButtonTheme](
       props as IconButtonProps & { theme: DefaultTheme },
     )}
 
@@ -180,12 +176,8 @@ export const StyledButton = styled(motion.button).withConfig({
     justify-content: center;
     transition: color 1s cubic-bezier(0.22, 1, 0.36, 1);
     color: inherit;
-    font-size: ${({ $iconButtonSize }) =>
-      $iconButtonSize === 'small'
-        ? '16px'
-        : $iconButtonSize === 'medium'
-          ? '18px'
-          : '22px'};
+    font-size: ${({ $size }) =>
+      $size === 'small' ? '16px' : $size === 'medium' ? '18px' : '22px'};
     margin: 0 0.3rem;
   }
 

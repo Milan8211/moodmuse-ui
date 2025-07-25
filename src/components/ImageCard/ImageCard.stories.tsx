@@ -10,38 +10,44 @@ const meta: Meta<typeof ImageCard> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    $imageCardThemeStyle: {
+    $themeStyle: {
       control: 'select',
       options: Object.keys(themes),
     },
-    $imageCardSize: {
+    $size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    $imagePosition: {
+    $position: {
       control: 'select',
       options: ['top', 'bottom', 'left', 'right'],
     },
-    $imageCardDropShadow: {
+    $dropShadow: {
       control: 'boolean',
     },
-    $imageCardTitle: {
+    title: {
       control: 'text',
     },
-    $imageCardContent: {
+    content: {
+      control: 'text',
+    },
+    src: {
+      control: 'text',
+    },
+    alt: {
       control: 'text',
     },
   },
   args: {
-    $imageCardTitle: 'Image Card Title',
-    $imageCardContent:
+    title: 'Image Card Title',
+    content:
       'This is the card content. It can be a short description or any other information.',
-    $imageSrc: '/public/images/ImageReview.png',
-    $imageAlt: 'Image Review',
-    $imageCardSize: 'medium',
-    $imageCardDropShadow: true,
-    $imagePosition: 'top',
-    $imageCardThemeStyle: 'neoglow',
+    src: '/public/images/ImageReview.png',
+    alt: 'Image Review',
+    $size: 'medium',
+    $dropShadow: true,
+    $position: 'top',
+    $themeStyle: 'neoglow',
   },
 };
 

@@ -11,22 +11,22 @@ const meta: Meta<typeof IconButton> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    $iconButtonThemeStyle: {
+    $themeStyle: {
       control: 'select',
       options: Object.keys(themes),
     },
-    $iconButtonSize: {
+    $size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
     },
-    $iconButtonRadius: {
+    $radius: {
       control: 'select',
       options: ['no', 'small', 'medium', 'large', 'pill'],
     },
-    $iconButtonDropShadow: {
+    $dropShadow: {
       control: 'boolean',
     },
-    $iconButtonLabel: {
+    label: {
       control: 'text',
     },
     disabled: {
@@ -34,12 +34,12 @@ const meta: Meta<typeof IconButton> = {
     },
   },
   args: {
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
-    $iconButtonLabel: 'Home',
-    $iconButtonSize: 'medium',
-    $iconButtonRadius: 'pill',
-    $iconButtonThemeStyle: 'neoglow',
-    $iconButtonDropShadow: true,
+    icon: <Icon icon="line-md:home" className="icon" />,
+    label: 'Home',
+    $size: 'medium',
+    $radius: 'pill',
+    $themeStyle: 'neoglow',
+    $dropShadow: true,
     disabled: false,
   },
 };
@@ -49,84 +49,84 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    $iconButtonLabel: 'Home',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    label: 'Home',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const NeoGlow: Story = {
   args: {
-    $iconButtonThemeStyle: 'neoglow',
-    $iconButtonLabel: 'NeoGlow',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $themeStyle: 'neoglow',
+    label: 'NeoGlow',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const BrandFocused: Story = {
   args: {
-    $iconButtonThemeStyle: 'brandfocused',
-    $iconButtonLabel: 'BrandFocused',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $themeStyle: 'brandfocused',
+    label: 'BrandFocused',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const GradientGlow: Story = {
   args: {
-    $iconButtonThemeStyle: 'gradientglow',
-    $iconButtonLabel: 'GradientGlow',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $themeStyle: 'gradientglow',
+    label: 'GradientGlow',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const SoftClay: Story = {
   args: {
-    $iconButtonThemeStyle: 'softclay',
-    $iconButtonLabel: 'SoftClay',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $themeStyle: 'softclay',
+    label: 'SoftClay',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const GhostLine: Story = {
   args: {
-    $iconButtonThemeStyle: 'ghostline',
-    $iconButtonLabel: 'GhostLine',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $themeStyle: 'ghostline',
+    label: 'GhostLine',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const MoodPop: Story = {
   args: {
-    $iconButtonThemeStyle: 'moodpop',
-    $iconButtonLabel: 'MoodPop',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $themeStyle: 'moodpop',
+    label: 'MoodPop',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const MonoGrid: Story = {
   args: {
-    $iconButtonThemeStyle: 'monogrid',
-    $iconButtonLabel: 'MonoGrid',
-    $iconButtonIcon: <Icon icon="line-md:home" className="icon" />,
+    $themeStyle: 'monogrid',
+    label: 'MonoGrid',
+    icon: <Icon icon="line-md:home" className="icon" />,
   },
 };
 
 export const Large: Story = {
   args: {
-    $iconButtonSize: 'large',
-    $iconButtonLabel: 'Large',
+    $size: 'large',
+    label: 'Large',
   },
 };
 
 export const Small: Story = {
   args: {
-    $iconButtonSize: 'small',
-    $iconButtonLabel: 'Small',
+    $size: 'small',
+    label: 'Small',
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    $iconButtonLabel: 'Disabled',
+    label: 'Disabled',
   },
 };
